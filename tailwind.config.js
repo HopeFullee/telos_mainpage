@@ -37,11 +37,37 @@ module.exports = {
       margin: px0_100,
       spacing: px0_300,
       colors: {
+        'c-gray-200': '#F5F5F5',
         'c-gray-300': '#D9D9D9',
+        'c-gray-400': '#6B6B6B',
+        'c-black-200': '#4F4F4F',
         'c-black-300': '#2B2B2B',
+        'c-orange-300': '#EB691B',
       },
       fontFamily: {
         'open-sans': ['OpenSans'],
+      },
+      screens: {
+        ssm: '450px',
+        // => @media (min-width: 350px) { ... }
+
+        sm: '600px',
+        // => @media (min-width: 350px) { ... }
+
+        md: '900px',
+        // => @media (min-width: 600px) { ... }
+
+        lg: '1100px',
+        // => @media (min-width: 1024px) { ... }
+
+        xl: '1300px',
+        // => @media (min-width: 1280px) { ... }
+
+        xxl: '1450px',
+        // => @media (min-width: 1536px) { ... }
+
+        xxxl: '1600px',
+        // => @media (min-width: 1536px) { ... }
       },
     },
   },

@@ -10,7 +10,9 @@ const CategoryButton = ({ children, onClick, active }: Props) => {
   return (
     <button
       className={clsx(
-        active ? 'bg-orange-400 text-white' : 'bg-c-gray-300 text-black',
+        active
+          ? 'bg-c-orange-300 text-white'
+          : 'bg-c-gray-300 text-c-black-300',
       )}
       onClick={onClick}
     >

@@ -1,5 +1,7 @@
 import React from 'react'
+import Footer from '../Footer'
 import Header from '../Header'
+import { Location } from '@reach/router'
 
 type Props = {
   children: React.ReactNode
@@ -8,8 +10,11 @@ type Props = {
 const Layout = function ({ children }: Props) {
   return (
     <>
-      <Header />
+      <Location>
+        {locationProps => <Header currentPath={locationProps} />}
+      </Location>
       {children}
+      <Footer />
     </>
   )
 }

@@ -33,7 +33,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode })
-    console.log(slug)
     createNodeField({ node, name: 'slug', value: slug })
   }
 }
@@ -56,6 +55,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               fields {
                 slug
+              }
+            }
+            next {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                categories
               }
             }
           }
@@ -81,11 +89,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node: {
       fields: { slug },
     },
+    next,
   }) => {
     const pageOptions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: {
+        slug,
+        next: next
+          ? {
+              slug: next.fields.slug,
+              title: next.frontmatter.title,
+              categories: next.frontmatter.categories,
+            }
+          : null,
+      },
     }
 
     createPage(pageOptions)

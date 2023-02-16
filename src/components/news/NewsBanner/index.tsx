@@ -1,10 +1,12 @@
 import React from 'react'
-import newsBannerImage from 'assets/images/news_banner.png'
+import useNewsBanner from 'hooks/useNewsBanner'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const NewsBanner = function () {
+  const img = useNewsBanner()
   return (
     <div className="w-full">
-      <img src={newsBannerImage} />
+      <GatsbyImage image={img} alt={'텔로스 뉴스 베너 이미지'} />
     </div>
   )
 }

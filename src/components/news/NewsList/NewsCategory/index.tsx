@@ -18,7 +18,7 @@ const NewsCategory = ({
   }
 
   return (
-    <div className="flex flex-wrap gap-20 font-semibold text-20 font-open-sans text-c-black-300 under:py-8 under:px-25 under:rounded-3xl ">
+    <div className="flex flex-wrap font-semibold gap-15 md:gap-20 sm:text-18 md:text-20 all:font-open-sans text-c-black-300 under:py-6 under:px-15 md:under:py-8 md:under:px-25 under:rounded-3xl">
       {Object.entries(categoryList).map(([name, count]) => {
         return (
           <CategoryButton
