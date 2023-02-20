@@ -25,6 +25,12 @@ const Header = ({ currentPath }: Props) => {
     setToggleMenu(false)
   }
 
+  const getHamburgerIconStroke = () => {
+    if (currentHeaderState === 'on') return 'stroke-[#C7C7C7]'
+    if (isRootPath) return 'stroke-white'
+    return 'stroke-[#C7C7C7]'
+  }
+
   return (
     <header
       className={clsx(
@@ -40,8 +46,8 @@ const Header = ({ currentPath }: Props) => {
       <button onClick={handleMenuOpen}>
         <HamburgerIcon
           className={clsx(
-            isRootPath ? 'text-white' : 'text-[#C7C7C7]',
-            'stroke-current mr-[-5px] sm:mr-[-20px] h-full w-38 sm:w-45',
+            getHamburgerIconStroke(),
+            'mr-[-5px] sm:mr-[-20px] h-full w-38 sm:w-45',
           )}
         />
       </button>

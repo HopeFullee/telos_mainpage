@@ -12,11 +12,12 @@ const MainDescription = () => {
 
   const observer: IntersectionObserver = new IntersectionObserver(
     ([entry]) => {
-      if (!entry.isIntersecting) {
+      if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
         setHeaderState('off')
       } else {
         setHeaderState('on')
       }
+      console.log(entry.boundingClientRect.top)
     },
     {
       rootMargin: '0px 0px -150px 0px',

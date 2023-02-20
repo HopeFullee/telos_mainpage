@@ -3,17 +3,18 @@ import Layout from 'components/layout/Layout'
 import MainBanner from 'components/main/MainBanner'
 import MainDescription from 'components/main/MainDescription'
 import MainCenterAnimate from 'components/main/MainCenterAnimate'
-import { RecoilRoot } from 'recoil'
+import MainPhotoZone from 'components/main/MainPhotoZone'
+import MainBottomAnimate from 'components/main/MainBottomAnimate'
 
 const IndexPage = function () {
   return (
-    <RecoilRoot>
-      <Layout>
-        <MainBanner />
-        <MainDescription />
-        <MainCenterAnimate />
-      </Layout>
-    </RecoilRoot>
+    <Layout>
+      <MainBanner />
+      <MainDescription />
+      <MainCenterAnimate />
+      <MainPhotoZone />
+      <MainBottomAnimate />
+    </Layout>
   )
 }
 

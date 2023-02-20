@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 export const useMainImages = () => {
   const imageData = useStaticQuery(graphql`
-    query testImage {
+    query mainImage {
       TelosSoft: file(name: { eq: "telos_soft" }) {
         childImageSharp {
           gatsbyImageData(quality: 100)
@@ -13,11 +13,21 @@ export const useMainImages = () => {
           gatsbyImageData(quality: 100)
         }
       }
+      TelosPhoto: file(name: { eq: "telos_photo" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100)
+        }
+      }
     }
   `)
 
   const telosSoft = imageData.TelosSoft.childImageSharp.gatsbyImageData
   const telosBranding = imageData.TelosBranding.childImageSharp.gatsbyImageData
+  const telosPhoto = imageData.TelosPhoto.childImageSharp.gatsbyImageData
 
-  return { telosSoft, telosBranding }
+  return {
+    telosSoft,
+    telosBranding,
+    telosPhoto,
+  }
 }

@@ -6,7 +6,6 @@ import NewsDescription from 'components/news/NewsDescription'
 import NewsList from 'components/news/NewsList'
 import { CategoryListProps } from 'components/news/NewsList/NewsCategory'
 import queryString from 'query-string'
-import { RecoilRoot } from 'recoil'
 
 type NewsPageProps = {
   location: {
@@ -63,18 +62,16 @@ const NewsPage = function ({
   }, [categoryQueryString])
 
   return (
-    <RecoilRoot>
-      <Layout>
-        <NewsBanner />
-        <NewsDescription />
-        <NewsList
-          itemClickCallback={setCurrentCategory}
-          selectedCategory={currentCategory}
-          categoryList={categoryList}
-          posts={edges}
-        />
-      </Layout>
-    </RecoilRoot>
+    <Layout>
+      <NewsBanner />
+      <NewsDescription />
+      <NewsList
+        itemClickCallback={setCurrentCategory}
+        selectedCategory={currentCategory}
+        categoryList={categoryList}
+        posts={edges}
+      />
+    </Layout>
   )
 }
 

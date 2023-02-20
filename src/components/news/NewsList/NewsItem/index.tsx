@@ -13,8 +13,6 @@ const NewsItem = ({
   },
   link,
 }: NewsItemProps) => {
-  console.log(date)
-
   return (
     <Link to={link}>
       <article>
