@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import { ArrowRight } from 'components/shared/Icons'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import SEO from 'components/shared/SEO'
 
 type PostTemplateProps = {
   data: {
@@ -38,6 +39,7 @@ const PostTemplate = function ({
 
   return (
     <Layout>
+      <SEO title={frontmatter.title} description={markdown.excerpt} />
       <section className="w-full px-20 mx-auto mt-60 max-w-1440 sm:mt-80 md:mt-100 lg:mt-120">
         <article className="border-t-2 border-c-black-300">
           <div className="p-10 text-15 sm:p-15 md:p-20 sm:text-18 md:text-20 lg:text-22 text-c-gray-400">

@@ -11,9 +11,8 @@ exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
 
-// import React from 'react'
-// import { RecoilRoot } from 'recoil'
-
-// export const wrapRootElement = ({ element }) => {
-//   return <RecoilRoot>{element}</RecoilRoot>
-// }
+const React = require('react')
+const { RecoilRoot } = require('recoil')
+exports.wrapRootElement = ({ element }) => {
+  return <RecoilRoot>{element}</RecoilRoot>
+}
