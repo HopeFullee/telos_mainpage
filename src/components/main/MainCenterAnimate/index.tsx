@@ -2,67 +2,64 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper'
 import 'swiper/css'
-import 'swiper/css/autoplay'
 
-import {
-  AnimateBrand,
-  AnimateCreative,
-  AnimateClient,
-  AnimateContent,
-  AnimateFrontend,
-  AnimateTomorrow,
-  AnimateInnovation,
-  AnimateGraphic,
-  AnimateBackend,
-  AnimateProduct,
-  AnimateChallenge,
-  AnimateMarket,
-  AnimatePassion,
-  AnimateService,
-  AnimateIllust,
-} from 'components/shared/Icons'
+import animate01 from 'assets/animation_gif/brand_01.gif'
+import animate02 from 'assets/animation_gif/creative_02.png'
+import animate03 from 'assets/animation_gif/client_03.gif'
+import animate04 from 'assets/animation_gif/content_04.gif'
+import animate05 from 'assets/animation_gif/innovation_05.png'
+import animate06 from 'assets/animation_gif/frontend_06.gif'
+import animate07 from 'assets/animation_gif/graphic_07.gif'
+import animate08 from 'assets/animation_gif/tomorrow_08.png'
+import animate09 from 'assets/animation_gif/backend_09.gif'
+import animate10 from 'assets/animation_gif/product_10.gif'
+import animate11 from 'assets/animation_gif/challenge_11.png'
+import animate12 from 'assets/animation_gif/market_12.gif'
+import animate13 from 'assets/animation_gif/passion_13.png'
+import animate14 from 'assets/animation_gif/service_14.gif'
+import animate15 from 'assets/animation_gif/illust_15.gif'
 
 const RowOne = [
-  <AnimateBrand />,
-  <AnimateCreative />,
-  <AnimateClient />,
-  <AnimateContent />,
-  <AnimateInnovation />,
-  <AnimateFrontend />,
-  <AnimateGraphic />,
-  <AnimateBrand />,
-  <AnimateCreative />,
-  <AnimateClient />,
-  <AnimateContent />,
-  <AnimateInnovation />,
-  <AnimateFrontend />,
-  <AnimateGraphic />,
-  <AnimateBrand />,
-  <AnimateCreative />,
-  <AnimateClient />,
-  <AnimateContent />,
-  <AnimateInnovation />,
-  <AnimateFrontend />,
-  <AnimateGraphic />,
+  <img src={animate01} alt="Branding" />,
+  <img src={animate02} alt="Creative" />,
+  <img src={animate03} alt="Client" />,
+  <img src={animate04} alt="Content" />,
+  <img src={animate05} alt="Innovation" />,
+  <img src={animate06} alt="Frontend" />,
+  <img src={animate07} alt="Graphic" />,
+  <img src={animate01} alt="Branding" />,
+  <img src={animate02} alt="Creative" />,
+  <img src={animate03} alt="Client" />,
+  <img src={animate04} alt="Content" />,
+  <img src={animate05} alt="Innovation" />,
+  <img src={animate06} alt="Frontend" />,
+  <img src={animate07} alt="Graphic" />,
+  <img src={animate01} alt="Branding" />,
+  <img src={animate02} alt="Creative" />,
+  <img src={animate03} alt="Client" />,
+  <img src={animate04} alt="Content" />,
+  <img src={animate05} alt="Innovation" />,
+  <img src={animate06} alt="Frontend" />,
+  <img src={animate07} alt="Graphic" />,
 ]
 
 const RowTwo = [
-  <AnimateTomorrow />,
-  <AnimateBackend />,
-  <AnimateProduct />,
-  <AnimateChallenge />,
-  <AnimateMarket />,
-  <AnimatePassion />,
-  <AnimateService />,
-  <AnimateIllust />,
-  <AnimateTomorrow />,
-  <AnimateBackend />,
-  <AnimateProduct />,
-  <AnimateChallenge />,
-  <AnimateMarket />,
-  <AnimatePassion />,
-  <AnimateService />,
-  <AnimateIllust />,
+  <img src={animate08} alt="Tomorrow" />,
+  <img src={animate09} alt="Backend" />,
+  <img src={animate10} alt="Product" />,
+  <img src={animate11} alt="Challenge" />,
+  <img src={animate12} alt="Market" />,
+  <img src={animate13} alt="Passion" />,
+  <img src={animate14} alt="Service" />,
+  <img src={animate15} alt="Illust" />,
+  <img src={animate08} alt="Tomorrow" />,
+  <img src={animate09} alt="Backend" />,
+  <img src={animate10} alt="Product" />,
+  <img src={animate11} alt="Challenge" />,
+  <img src={animate12} alt="Market" />,
+  <img src={animate13} alt="Passion" />,
+  <img src={animate14} alt="Service" />,
+  <img src={animate15} alt="Illust" />,
 ]
 
 const MainCenterAnimate = () => {
@@ -80,114 +77,72 @@ const MainCenterAnimate = () => {
         <Swiper
           allowTouchMove={false}
           loop={true}
-          speed={1500}
+          speed={4000}
           autoplay={{ delay: 0 }}
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}
           breakpoints={{
             0: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-            400: {
               slidesPerView: 4,
-              spaceBetween: 100,
+              spaceBetween: 20,
             },
-            500: {
+            700: {
               slidesPerView: 5,
-              spaceBetween: 100,
+              spaceBetween: 30,
             },
-            600: {
-              slidesPerView: 4,
-              spaceBetween: 100,
-            },
-            800: {
-              slidesPerView: 5,
-              spaceBetween: 150,
-            },
-            900: {
-              slidesPerView: 5,
-              spaceBetween: 0,
-            },
-            1100: {
+            1000: {
               slidesPerView: 6,
-              spaceBetween: 150,
+              spaceBetween: 30,
             },
-            1400: {
+            1300: {
               slidesPerView: 7,
-              spaceBetween: 100,
+              spaceBetween: 30,
             },
             1600: {
               slidesPerView: 8,
-              spaceBetween: 80,
+              spaceBetween: 30,
             },
           }}
         >
-          {RowOne.map((svg, idx) => {
-            return (
-              <SwiperSlide
-                key={idx}
-                className="under:h-120 under:sm:h-180 under:lg:h-220"
-              >
-                {svg}
-              </SwiperSlide>
-            )
+          {RowOne.map((gif, idx) => {
+            return <SwiperSlide key={idx}>{gif}</SwiperSlide>
           })}
         </Swiper>
         <Swiper
           className="mt-15 sm:mt-30"
           allowTouchMove={false}
           loop={true}
-          speed={1500}
+          speed={4000}
           autoplay={{ delay: 0, reverseDirection: true }}
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}
           breakpoints={{
             0: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-            400: {
               slidesPerView: 4,
-              spaceBetween: 100,
+              spaceBetween: 20,
             },
-            500: {
+            700: {
               slidesPerView: 5,
-              spaceBetween: 100,
+              spaceBetween: 30,
             },
-            600: {
-              slidesPerView: 4,
-              spaceBetween: 100,
-            },
-            800: {
-              slidesPerView: 5,
-              spaceBetween: 150,
-            },
-            900: {
-              slidesPerView: 5,
-              spaceBetween: 0,
-            },
-            1100: {
+            1000: {
               slidesPerView: 6,
-              spaceBetween: 150,
+              spaceBetween: 30,
             },
-            1400: {
+            1300: {
               slidesPerView: 7,
-              spaceBetween: 100,
+              spaceBetween: 30,
             },
             1600: {
               slidesPerView: 8,
-              spaceBetween: 80,
+              spaceBetween: 30,
             },
           }}
         >
-          {RowTwo.map((svg, idx) => {
+          {RowTwo.map((gif, idx) => {
             return (
-              <SwiperSlide
-                key={idx}
-                className="under:h-120 under:sm:h-180 under:lg:h-220"
-              >
-                {svg}
+              <SwiperSlide key={idx} className="">
+                {gif}
               </SwiperSlide>
             )
           })}

@@ -1,15 +1,7 @@
 .header-on {
-  @apply bg-white transition ease-in;
-
-  button {
-    @apply all:text-[#C7C7C7];
-  }
+  @apply bg-white transition ease-in border-b-1;
 }
 
 .header-off {
   @apply bg-none transition ease-in border-none;
-
-  button {
-    @apply all:text-[#FFFFFF];
-  }
 }

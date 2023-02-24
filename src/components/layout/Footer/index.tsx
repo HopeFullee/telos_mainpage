@@ -21,9 +21,9 @@ const Footer = () => {
         <div className="flex flex-wrap items-center gap-20 font-bold text-18 lg:all:text-22">
           <a href="#">회사소개서</a>
           <span className="w-2 h-22 bg-c-gray-300"></span>
-          <a href="#">Instagram</a>
+          <a href="https://www.instagram.com/telos_official/">Instagram</a>
           <span className="w-2 h-22 bg-c-gray-300"></span>
-          <a href="#">Blog</a>
+          <a href="https://blog.naver.com/telos_official">Blog</a>
         </div>
         <p className="mt-20 font-light lg:text-18">
           Copyright, Telos Inc. All rights reserved.

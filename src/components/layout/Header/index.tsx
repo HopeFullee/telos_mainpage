@@ -34,9 +34,13 @@ const Header = ({ currentPath }: Props) => {
   return (
     <header
       className={clsx(
-        currentHeaderState === 'on' ? 'header-on' : 'header-off',
+        currentHeaderState === 'on'
+          ? 'header-on'
+          : isRootPath
+          ? 'header-off'
+          : 'header-on',
         isRootPath ? 'fixed' : 'sticky bg-white',
-        'header top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 border-b-1 sm:h-86 lg:px-50',
+        'header top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 sm:h-86 lg:px-50',
       )}
     >
       <Link to="/">
@@ -47,7 +51,7 @@ const Header = ({ currentPath }: Props) => {
         <HamburgerIcon
           className={clsx(
             getHamburgerIconStroke(),
-            'mr-[-5px] sm:mr-[-20px] h-full w-38 sm:w-45',
+            'mr-[-5px] sm:mr-[-15px] h-full w-38 sm:w-45',
           )}
         />
       </button>

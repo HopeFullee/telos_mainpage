@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import Layout from 'components/layout/Layout'
 import MainBanner from 'components/main/MainBanner'
 import MainDescription from 'components/main/MainDescription'
 import MainCenterAnimate from 'components/main/MainCenterAnimate'
 import MainPhotoZone from 'components/main/MainPhotoZone'
 import MainBottomAnimate from 'components/main/MainBottomAnimate'
+import MainNews from 'components/main/MainNews'
+import MainContact from 'components/main/MainContact'
 import SEO from 'components/shared/SEO'
 
 const IndexPage = function () {
@@ -19,6 +21,8 @@ const IndexPage = function () {
       <MainCenterAnimate />
       <MainPhotoZone />
       <MainBottomAnimate />
+      <MainNews />
+      <MainContact />
     </Layout>
   )
 }

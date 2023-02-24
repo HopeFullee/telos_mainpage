@@ -1,11 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { useMainImages } from 'hooks/useMainImages'
+import { useMainGatsbyImage } from 'hooks/useMainGatsbyImage'
 import { useSetRecoilState } from 'recoil'
 import headerStateAtom from 'components/layout/Header/store'
 
 const MainDescription = () => {
-  const { telosSoft, telosBranding } = useMainImages()
+  const [activeSoft, setActiveSoft] = useState(false)
+  const [activeBranding, setActiveBranding] = useState(false)
+
+  const handleBrandingEnter = () => {
+    setActiveBranding(prev => !prev)
+  }
+
+  const { telosSoft, telosBranding, telosSoftHover, telosBrandingHover } =
+    useMainGatsbyImage()
 
   const setHeaderState = useSetRecoilState(headerStateAtom)
   const sectionRef = useRef<HTMLElement>(null)
@@ -18,7 +26,6 @@ const MainDescription = () => {
         } else {
           setHeaderState('on')
         }
-        console.log(entry.boundingClientRect.top)
       },
       {
         rootMargin: '0px 0px -150px 0px',
@@ -43,8 +50,16 @@ const MainDescription = () => {
       </div>
 
       <div className="flex flex-col items-center gap-50 md:gap-40 md:items-start lg:gap-50 md:flex-row">
-        <article className="flex flex-col items-center max-w-550 md:max-w-750">
-          <GatsbyImage image={telosSoft} alt={'텔로스 소프트 이미지'} />
+        <article
+          onMouseEnter={() => setActiveSoft(true)}
+          onMouseLeave={() => setActiveSoft(false)}
+          className="flex flex-col items-center cursor-pointer max-w-550 md:max-w-750"
+        >
+          {activeSoft ? (
+            <GatsbyImage image={telosSoftHover} alt={'텔로스 소프트 이미지'} />
+          ) : (
+            <GatsbyImage image={telosSoft} alt={'텔로스 소프트 이미지'} />
+          )}
           <div className="w-full px-10 leading-relaxed text-center py-15 sm:py-25 lg:py-35 bg-c-gray-200 ">
             <h4 className="font-bold text-20 sm:text-22 lg:text-28 text-c-black-300">
               텔로스 소프트
@@ -55,8 +70,19 @@ const MainDescription = () => {
           </div>
         </article>
 
-        <article className="flex flex-col items-center max-w-550 md:max-w-750">
-          <GatsbyImage image={telosBranding} alt={'텔로스 소프트 이미지'} />
+        <article
+          onMouseEnter={() => setActiveBranding(true)}
+          onMouseLeave={() => setActiveBranding(false)}
+          className="flex flex-col items-center cursor-pointer max-w-550 md:max-w-750"
+        >
+          {activeBranding ? (
+            <GatsbyImage
+              image={telosBrandingHover}
+              alt={'텔로스 브랜딩 이미지'}
+            />
+          ) : (
+            <GatsbyImage image={telosBranding} alt={'텔로스 브랜딩 이미지'} />
+          )}
           <div className="w-full px-10 leading-relaxed text-center py-15 sm:py-25 lg:py-35 bg-c-gray-200 ">
             <h4 className="font-bold text-20 sm:text-22 lg:text-28 text-c-black-300">
               텔로스 브랜딩

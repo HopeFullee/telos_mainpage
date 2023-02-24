@@ -4,22 +4,20 @@ import ArrowRight from 'icons/shared_icon/arrow_right.icon.svg'
 import ArrowDown from 'icons/shared_icon/arrow_down.icon.svg'
 import MoreButton from 'icons/shared_icon/more_button.icon.svg'
 import CloseIcon from 'icons/shared_icon/close.icon.svg'
-import AnimateBrand from 'icons/animate_icon/brand_1.icon.svg'
-import AnimateCreative from 'icons/animate_icon/creative_2.icon.svg'
-import AnimateClient from 'icons/animate_icon/client_3.icon.svg'
-import AnimateContent from 'icons/animate_icon/content_4.icon.svg'
-import AnimateInnovation from 'icons/animate_icon/innovation_5.icon.svg'
-import AnimateFrontend from 'icons/animate_icon/frontend_6.icon.svg'
-import AnimateGraphic from 'icons/animate_icon/graphic_7.icon.svg'
-import AnimateTomorrow from 'icons/animate_icon/tomorrow_8.icon.svg'
-import AnimateBackend from 'icons/animate_icon/backend_9.icon.svg'
-import AnimateProduct from 'icons/animate_icon/product_10.icon.svg'
-import AnimateChallenge from 'icons/animate_icon/challenge_11.icon.svg'
-import AnimateMarket from 'icons/animate_icon/market_12.icon.svg'
-import AnimatePassion from 'icons/animate_icon/passion_13.icon.svg'
-import AnimateService from 'icons/animate_icon/service_14.icon.svg'
-import AnimateIllust from 'icons/animate_icon/illust_15.icon.svg'
-
+import AddButton from 'icons/shared_icon/add_button.icon.svg'
+import ScrollOpen from 'icons/shared_icon/scroll_open.icon.svg'
+import ScrollClose from 'icons/shared_icon/scroll_close.icon.svg'
+import DetailButton from 'icons/shared_icon/detail_button.icon.svg'
+import FrontendIcon from 'icons/class_icon/frontend.icon.svg'
+import BackendIcon from 'icons/class_icon/backend.icon.svg'
+import ClientIcon from 'icons/class_icon/client.icon.svg'
+import DesignIcon from 'icons/class_icon/design.icon.svg'
+import ContentIcon from 'icons/class_icon/content.icon.svg'
+import GraphicIcon from 'icons/class_icon/graphic.icon.svg'
+import ProductIcon from 'icons/class_icon/product.icon.svg'
+import MarketIcon from 'icons/class_icon/Market.icon.svg'
+import ServiceIcon from 'icons/class_icon/service.icon.svg'
+import IllustIcon from 'icons/class_icon/illust.icon.svg'
 export {
   TelosLogo,
   HamburgerIcon,
@@ -27,19 +25,18 @@ export {
   ArrowDown,
   MoreButton,
   CloseIcon,
-  AnimateBrand,
-  AnimateCreative,
-  AnimateClient,
-  AnimateContent,
-  AnimateInnovation,
-  AnimateFrontend,
-  AnimateGraphic,
-  AnimateTomorrow,
-  AnimateBackend,
-  AnimateProduct,
-  AnimateChallenge,
-  AnimateMarket,
-  AnimatePassion,
-  AnimateService,
-  AnimateIllust,
+  AddButton,
+  ScrollOpen,
+  ScrollClose,
+  DetailButton,
+  FrontendIcon,
+  BackendIcon,
+  ClientIcon,
+  DesignIcon,
+  ContentIcon,
+  GraphicIcon,
+  ProductIcon,
+  MarketIcon,
+  ServiceIcon,
+  IllustIcon,
 }
