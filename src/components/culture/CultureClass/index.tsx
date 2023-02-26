@@ -28,14 +28,20 @@ const CultureClass = () => {
 
   const handleSoftClick = () => {
     setSoftState(prev => !prev)
+    setBrandingState(false)
+    setTelosState(false)
   }
 
   const handleBrandingClick = () => {
     setBrandingState(prev => !prev)
+    setSoftState(false)
+    setTelosState(false)
   }
 
   const handleTelosClick = () => {
     setTelosState(prev => !prev)
+    setSoftState(false)
+    setBrandingState(false)
   }
 
   return (
@@ -43,12 +49,16 @@ const CultureClass = () => {
       <div className="border-y-2 border-c-black-300">
         <article
           onClick={handleSoftClick}
-          className="flex items-center justify-between cursor-pointer h-150 px-65 bg-c-orange-300/10 border-b-1 border-[#c7c7c7]"
+          className="flex items-center justify-between cursor-pointer h-150 px-65 bg-c-orange-300/10 border-y-1 border-[#c7c7c7]"
         >
           <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
             SOFT
           </h4>
-          <ScrollOpen className="w-36 h-36" />
+          {!softState ? (
+            <ScrollOpen className="w-36 h-36" />
+          ) : (
+            <ScrollClose className="w-36 h-36" />
+          )}
         </article>
         {softState && <SubCategory subCategory={SOFT_CATEGORY_LIST} />}
 
@@ -59,7 +69,11 @@ const CultureClass = () => {
           <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
             BRANDING
           </h4>
-          <ScrollOpen className="w-36 h-36" />
+          {!brandingState ? (
+            <ScrollOpen className="w-36 h-36" />
+          ) : (
+            <ScrollClose className="w-36 h-36" />
+          )}
         </article>
         {brandingState && <SubCategory subCategory={BRANDING_CATEGORY_LIST} />}
 
@@ -70,7 +84,11 @@ const CultureClass = () => {
           <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
             TELOS
           </h4>
-          <ScrollOpen className="w-36 h-36" />
+          {!telosState ? (
+            <ScrollOpen className="w-36 h-36" />
+          ) : (
+            <ScrollClose className="w-36 h-36" />
+          )}
         </article>
         {telosState && <SubCategory subCategory={TELOS_CATEGORY_LIST} />}
       </div>

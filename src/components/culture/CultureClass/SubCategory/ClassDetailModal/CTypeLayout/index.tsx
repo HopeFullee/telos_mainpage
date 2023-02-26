@@ -30,8 +30,8 @@ const CTypeLayout = ({
   preferList,
 }: CTypeLayoutProps) => {
   return (
-    <div className="flex justify-between mt-50 gap-100 all:leading-8">
-      <div className="w-[50%] lg:w-[65%] gap-50">
+    <div className="flex flex-col justify-between mt-50 gap-50 md:gap-80 lg:gap-100 all:leading-8 md:flex-row">
+      <div className="w-full md:w-[50%] lg:w-[65%] gap-50">
         <div className="all:text-c-black-300">
           <h5 className="ml-5 font-bold text-18">주요업무</h5>
           <span className="block w-full h-1 mt-5 bg-black"></span>
@@ -81,7 +81,7 @@ const CTypeLayout = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-[50%] lg:w-[35%] gap-50">
+      <div className="flex flex-col w-full md:w-[50%] lg:w-[35%] gap-50">
         <div className="all:text-c-black-300">
           <h5 className="ml-5 font-bold text-18">우대사항</h5>
           <span className="block w-full h-1 mt-5 bg-black"></span>
