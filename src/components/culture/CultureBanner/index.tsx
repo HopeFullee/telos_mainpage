@@ -7,13 +7,8 @@ import { useCultureGatsbyImage } from 'hooks/useCultureGatsbyImage'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 const CultureBanner = () => {
-  const {
-    cultureBanner01,
-    cultureBanner02,
-    cultureBanner03,
-    cultureBanner04,
-    cultureBanner05,
-  } = useCultureGatsbyImage()
+  const { cultureBanner01, cultureBanner02, cultureBanner03, cultureBanner04 } =
+    useCultureGatsbyImage()
 
   SwiperCore.use([Autoplay])
   return (

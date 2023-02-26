@@ -3,10 +3,10 @@ import { DetailButton } from 'components/shared/Icons'
 import ClassDetailModal from './ClassDetailModal'
 import { modalStateAtom } from '../../../../store'
 import { useRecoilState } from 'recoil'
-import { SoftCategoryType } from '../../../../store'
+import { CategoryType } from '../../../../store'
 
 type CategoryProps = {
-  subCategory: SoftCategoryType
+  subCategory: CategoryType
 }
 
 const SubCategory = ({ subCategory }: CategoryProps) => {
@@ -16,12 +16,13 @@ const SubCategory = ({ subCategory }: CategoryProps) => {
   const handleSubCategoryClick = (idx: number) => {
     setCategoryTarget(idx)
     setModalState(true)
+    document.body.classList.add('overflow-y-hidden')
   }
 
   return (
     <>
       <ul>
-        {subCategory.map(({ categoryEN, categoryKR, ...rest }, idx) => {
+        {subCategory.map(({ categoryEN, categoryKR }, idx) => {
           return (
             <>
               <li

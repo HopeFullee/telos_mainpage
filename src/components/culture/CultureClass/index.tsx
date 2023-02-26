@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { ScrollOpen, ScrollClose } from 'components/shared/Icons'
 import SubCategory from './SubCategory'
-import { SoftCategoryAtom } from '../../../store'
+import {
+  SoftCategoryAtom,
+  BrandingCategoryAtom,
+  TelosCategoryAtom,
+} from '../../../store'
 import { useRecoilValue } from 'recoil'
 
 const BRANDING_CATEGORY_LIST = [
@@ -15,6 +19,8 @@ const TELOS_CATEGORY_LIST = [
 
 const CultureClass = () => {
   const SOFT_CATEGORY_LIST = useRecoilValue(SoftCategoryAtom)
+  const BRANDING_CATEGORY_LIST = useRecoilValue(BrandingCategoryAtom)
+  const TELOS_CATEGORY_LIST = useRecoilValue(TelosCategoryAtom)
 
   const [softState, setSoftState] = useState(false)
   const [brandingState, setBrandingState] = useState(false)
@@ -55,7 +61,7 @@ const CultureClass = () => {
           </h4>
           <ScrollOpen className="w-36 h-36" />
         </article>
-        {brandingState && <SubCategory subCategory={SOFT_CATEGORY_LIST} />}
+        {brandingState && <SubCategory subCategory={BRANDING_CATEGORY_LIST} />}
 
         <article
           onClick={handleTelosClick}
@@ -66,7 +72,7 @@ const CultureClass = () => {
           </h4>
           <ScrollOpen className="w-36 h-36" />
         </article>
-        {telosState && <SubCategory subCategory={SOFT_CATEGORY_LIST} />}
+        {telosState && <SubCategory subCategory={TELOS_CATEGORY_LIST} />}
       </div>
     </section>
   )

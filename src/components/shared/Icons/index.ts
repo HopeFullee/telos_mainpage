@@ -14,7 +14,7 @@ import ClientIcon from 'icons/class_icon/client.icon.svg'
 import DesignIcon from 'icons/class_icon/design.icon.svg'
 import ContentIcon from 'icons/class_icon/content.icon.svg'
 import GraphicIcon from 'icons/class_icon/graphic.icon.svg'
-import ProductIcon from 'icons/class_icon/product.icon.svg'
+import ManagementIcon from 'icons/class_icon/Management.icon.svg'
 import MarketIcon from 'icons/class_icon/Market.icon.svg'
 import ServiceIcon from 'icons/class_icon/service.icon.svg'
 import IllustIcon from 'icons/class_icon/illust.icon.svg'
@@ -35,7 +35,7 @@ export {
   DesignIcon,
   ContentIcon,
   GraphicIcon,
-  ProductIcon,
+  ManagementIcon,
   MarketIcon,
   ServiceIcon,
   IllustIcon,

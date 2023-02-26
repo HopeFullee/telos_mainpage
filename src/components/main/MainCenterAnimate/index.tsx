@@ -12,7 +12,7 @@ import animate06 from 'assets/animation_gif/frontend_06.gif'
 import animate07 from 'assets/animation_gif/graphic_07.gif'
 import animate08 from 'assets/animation_gif/tomorrow_08.png'
 import animate09 from 'assets/animation_gif/backend_09.gif'
-import animate10 from 'assets/animation_gif/product_10.gif'
+import animate10 from 'assets/animation_gif/management_10.gif'
 import animate11 from 'assets/animation_gif/challenge_11.png'
 import animate12 from 'assets/animation_gif/market_12.gif'
 import animate13 from 'assets/animation_gif/passion_13.png'
@@ -46,7 +46,7 @@ const RowOne = [
 const RowTwo = [
   <img src={animate08} alt="Tomorrow" />,
   <img src={animate09} alt="Backend" />,
-  <img src={animate10} alt="Product" />,
+  <img src={animate10} alt="Management" />,
   <img src={animate11} alt="Challenge" />,
   <img src={animate12} alt="Market" />,
   <img src={animate13} alt="Passion" />,
@@ -54,7 +54,7 @@ const RowTwo = [
   <img src={animate15} alt="Illust" />,
   <img src={animate08} alt="Tomorrow" />,
   <img src={animate09} alt="Backend" />,
-  <img src={animate10} alt="Product" />,
+  <img src={animate10} alt="Management" />,
   <img src={animate11} alt="Challenge" />,
   <img src={animate12} alt="Market" />,
   <img src={animate13} alt="Passion" />,
