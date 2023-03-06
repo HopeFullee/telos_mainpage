@@ -8,7 +8,7 @@ import SEO from 'components/shared/SEO'
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="ABOUT" description="텔로스 기업 소개" />
+      <SEO title="ABOUT" description="기업 소개 페이지" />
       <AboutBanner />
       <AboutBranch />
       <AboutPartners />

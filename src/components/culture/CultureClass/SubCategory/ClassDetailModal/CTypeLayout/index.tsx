@@ -41,8 +41,8 @@ const CTypeLayout = ({
                 [{dutyList.listOne.listSubTitle}]
               </p>
               <ul className="font-medium list-disc ml-25 text-17">
-                {dutyList.listOne.list.map(item => {
-                  return <li>{item}</li>
+                {dutyList.listOne.list.map((item, idx) => {
+                  return <li key={idx}>{item}</li>
                 })}
               </ul>
             </div>
@@ -51,8 +51,8 @@ const CTypeLayout = ({
                 [{dutyList.listTwo.listSubTitle}]
               </p>
               <ul className="font-medium list-disc ml-25 text-17">
-                {dutyList.listTwo.list.map(item => {
-                  return <li>{item}</li>
+                {dutyList.listTwo.list.map((item, idx) => {
+                  return <li key={idx}>{item}</li>
                 })}
               </ul>
             </div>
@@ -63,8 +63,8 @@ const CTypeLayout = ({
                 [{dutyList.listThree.listSubTitle}]
               </p>
               <ul className="font-medium list-disc ml-25 text-17">
-                {dutyList.listThree.list.map(item => {
-                  return <li>{item}</li>
+                {dutyList.listThree.list.map((item, idx) => {
+                  return <li key={idx}>{item}</li>
                 })}
               </ul>
             </div>
@@ -73,8 +73,8 @@ const CTypeLayout = ({
                 [{dutyList.listFour.listSubTitle}]
               </p>
               <ul className="font-medium list-disc ml-25 text-17">
-                {dutyList.listFour.list.map(item => {
-                  return <li>{item}</li>
+                {dutyList.listFour.list.map((item, idx) => {
+                  return <li key={idx}>{item}</li>
                 })}
               </ul>
             </div>
@@ -86,8 +86,8 @@ const CTypeLayout = ({
           <h5 className="ml-5 font-bold text-18">우대사항</h5>
           <span className="block w-full h-1 mt-5 bg-black"></span>
           <ul className="mt-10 font-medium list-disc ml-25 text-17">
-            {preferList.map(item => {
-              return <li>{item}</li>
+            {preferList.map((item, idx) => {
+              return <li key={idx}>{item}</li>
             })}
           </ul>
         </div>
@@ -95,8 +95,8 @@ const CTypeLayout = ({
           <h5 className="ml-5 font-bold text-18">자격요건</h5>
           <span className="block w-full h-1 mt-5 bg-black"></span>
           <ul className="mt-10 font-medium list-disc ml-25 text-17">
-            {requirementList.map(item => {
-              return <li>{item}</li>
+            {requirementList.map((item, idx) => {
+              return <li key={idx}>{item}</li>
             })}
           </ul>
         </div>

@@ -20,3 +20,18 @@ type PostListItemType = {
     categories: string[]
   }
 }
+
+type MainNewsFrontmatterType = {
+  title: string
+  date: string
+}
+
+type MainNewsItemType = {
+  node: {
+    id: string
+    fields: {
+      slug: string
+    }
+    frontmatter: MainNewsFrontmatterType
+  }
+}

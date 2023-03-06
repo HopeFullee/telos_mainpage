@@ -8,6 +8,7 @@ import BTypeLayout from './BTypeLayout'
 import CTypeLayout from './CTypeLayout'
 import { layoutTypes } from '../../../../../store'
 import clsx from 'clsx'
+import ClassIcon from './ClassIcon'
 
 const ClassDetailModal = ({
   rootCategory,
@@ -20,6 +21,7 @@ const ClassDetailModal = ({
 }: CategoryItems) => {
   const [modalState, setModalState] = useRecoilState(modalStateAtom)
   const [isModalOverFlow, setIsModalOverFlow] = useState(false)
+  const [isModalNotOverFlow, setIsModalNotOverFlow] = useState(false)
 
   const handleModalClose = () => {
     setModalState(false)
@@ -30,22 +32,22 @@ const ClassDetailModal = ({
 
   const modalRef = React.useRef<HTMLDivElement>(null)
 
-  function useWindowSize(modalRef) {
+  const useWindowResize = (modalRef: any) => {
     useEffect(() => {
-      function handleResize() {
-        if (modalRef.current.clientHeight > 970) {
+      const handleResize = () => {
+        if (modalRef.current.clientHeight > window.innerHeight) {
           setIsModalOverFlow(true)
-        } else {
-          setIsModalOverFlow(false)
+          console.log('true??????')
         }
       }
+
       window.addEventListener('resize', handleResize)
       handleResize()
       return () => window.removeEventListener('resize', handleResize)
     }, [])
   }
 
-  useWindowSize(modalRef)
+  useWindowResize(modalRef)
 
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 z-20 flex items-center justify-center w-full h-full overflow-y-auto bg-c-black-300/50">
@@ -53,7 +55,7 @@ const ClassDetailModal = ({
       <section
         ref={modalRef}
         className={clsx(
-          isModalOverFlow ? 'h-[100vh]' : 'h-auto',
+          isModalOverFlow ? 'h-full' : 'h-auto',
           'z-30 w-full max-w-600 md:max-w-900 lg:max-w-1250',
         )}
       >
@@ -64,18 +66,16 @@ const ClassDetailModal = ({
           >
             <CloseIcon className="w-50 h-50" />
           </button>
-          <p className="font-extrabold text-white font-open-sans text-24 mt-[-35px] sm:mt-[-25px]">
+          <p className="font-extrabold text-white font-open-sans text-24 mt-[-25px]">
             {rootCategory}
           </p>
-          <div className="flex flex-col items-start sm:flex-row md:items-center pb-35 pt-25">
-            <DesignIcon className="h-70 w-70 sm:h-80 sm:w-80" />
+          <div className="flex flex-col items-start sm:flex-row md:items-center pb-25 sm:pb-35 pt-15 sm:pt-25">
+            <ClassIcon className={categoryEN} />
             <div className="sm:ml-20 sm:mt-[-10px] md:mt-[-15px] pr-40 sm:pr-60">
               <h4 className="font-extrabold outline-title font-open-sans text-32 md:text-42 text-c-orange-300">
                 {categoryEN}
               </h4>
-              <p className="text-white sm:mt-5 md:mt-auto text-18">
-                {categoryKR}
-              </p>
+              <p className="mt-5 text-white md:mt-auto text-18">{categoryKR}</p>
             </div>
           </div>
         </div>

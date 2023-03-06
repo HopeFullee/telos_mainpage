@@ -1,33 +1,12 @@
-[data-aos='animate-slogun'] {
-  position: relative;
-  background-image: none;
-  z-index: 2;
-  ::before {
-    position: absolute;
-    content: '';
-    inset: 0; /* same as { top: 0; right: 0; bottom: 0; left: 0; } */
-    background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(235, 105, 27, 1) 50%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 1s linear;
-  }
-
+[data-aos='animate-slogun-bg'] {
+  background: rgba($color: #eb691b, $alpha: 0);
   &.aos-animate {
-    :before {
-      opacity: 1;
-    }
+    background: rgba($color: #eb691b, $alpha: 1);
   }
 }
 
 [data-aos='animate-slogun'] {
-  transition: all 1.5s linear;
   color: #eb691b;
-
   &.aos-animate {
     color: white;
   }

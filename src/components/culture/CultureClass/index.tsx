@@ -45,49 +45,49 @@ const CultureClass = () => {
   }
 
   return (
-    <section className="mx-auto select-none max-w-1450 mt-120 px-50">
+    <section className="mx-auto select-none max-w-1450 mt-90 sm:mt-120 sm:px-40 lg:px-50">
       <div className="border-y-2 border-c-black-300">
         <article
           onClick={handleSoftClick}
-          className="flex items-center justify-between cursor-pointer h-150 px-65 bg-c-orange-300/10 border-y-1 border-[#c7c7c7]"
+          className="flex items-center justify-between cursor-pointer h-80 sm:h-120 lg:h-150 px-25 sm:px-45 lg:px-65 bg-c-orange-300/10 border-y-1 border-[#c7c7c7]"
         >
-          <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
+          <h4 className="font-extrabold text-26 sm:text-36 lg:text-40 text-c-orange-300 font-open-sans">
             SOFT
           </h4>
           {!softState ? (
-            <ScrollOpen className="w-36 h-36" />
+            <ScrollOpen className="mb-5 h-23 w-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           ) : (
-            <ScrollClose className="w-36 h-36" />
+            <ScrollClose className="mt-5 w-23 h-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           )}
         </article>
         {softState && <SubCategory subCategory={SOFT_CATEGORY_LIST} />}
 
         <article
           onClick={handleBrandingClick}
-          className="flex items-center justify-between cursor-pointer h-150 px-65 bg-c-orange-300/10 border-b-1 border-[#c7c7c7]"
+          className="flex items-center justify-between cursor-pointer h-80 sm:h-120 lg:h-150 px-25 sm:px-45 lg:px-65 bg-c-orange-300/10 border-b-1 border-[#c7c7c7]"
         >
-          <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
+          <h4 className="font-extrabold text-26 sm:text-36 lg:text-40 text-c-orange-300 font-open-sans">
             BRANDING
           </h4>
           {!brandingState ? (
-            <ScrollOpen className="w-36 h-36" />
+            <ScrollOpen className="mb-5 h-23 w-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           ) : (
-            <ScrollClose className="w-36 h-36" />
+            <ScrollClose className="mt-5 h-23 w-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           )}
         </article>
         {brandingState && <SubCategory subCategory={BRANDING_CATEGORY_LIST} />}
 
         <article
           onClick={handleTelosClick}
-          className="flex items-center justify-between cursor-pointer h-150 px-65 bg-c-orange-300/10 border-b-1 border-[#c7c7c7]"
+          className="flex items-center justify-between cursor-pointer h-80 sm:h-120 lg:h-150 px-25 sm:px-45 lg:px-65 bg-c-orange-300/10 border-b-1 border-[#c7c7c7]"
         >
-          <h4 className="font-extrabold text-40 text-c-orange-300 font-open-sans">
+          <h4 className="font-extrabold text-26 sm:text-36 lg:text-40 text-c-orange-300 font-open-sans">
             TELOS
           </h4>
           {!telosState ? (
-            <ScrollOpen className="w-36 h-36" />
+            <ScrollOpen className="mb-5 h-23 w-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           ) : (
-            <ScrollClose className="w-36 h-36" />
+            <ScrollClose className="mt-5 h-23 w-23 sm:w-32 sm:h-32 lg:w-36 lg:h-36" />
           )}
         </article>
         {telosState && <SubCategory subCategory={TELOS_CATEGORY_LIST} />}

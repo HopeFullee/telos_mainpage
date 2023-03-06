@@ -25,6 +25,7 @@ export type CategoryItems = {
   categoryEN: keyof typeof layoutTypes
   categoryKR: string
   description: string
+
   dutyList: {
     singleList: string[]
     multiList: {
@@ -78,6 +79,7 @@ export const SoftCategoryAtom = atom<CategoryType>({
       categoryKR: '게임 콘텐츠 기획자',
       description:
         '게임에 재미가 되어줄 콘텐츠를 디자인하고 시스템을 설계합니다. 개발에 필요한 기획서를 만들고 다양한 파트와 협업하여 게임 개발을 진행합니다.',
+
       dutyList: {
         singleList: [
           '콘텐츠 디자인 및 시스템 설계',
@@ -339,23 +341,6 @@ export const BrandingCategoryAtom = atom<CategoryType>({
     },
   ],
 })
-
-// export type TelosCategoryItems = {
-//   rootCategory: string
-//   categoryEN: keyof typeof layoutTypes
-//   categoryKR: string
-//   description: string
-//   dutyList: {
-//     accounting: string[]
-//     business: string[]
-//     personnel: string[]
-//     general: string[]
-//   }
-//   requirementList: string[]
-//   preferList: string[]
-// }
-
-// export type TelosCategoryType = TelosCategoryItems[]
 
 export const TelosCategoryAtom = atom<CategoryType>({
   key: 'TelosCategoryInfo',

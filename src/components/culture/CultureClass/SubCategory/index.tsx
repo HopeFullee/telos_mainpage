@@ -24,18 +24,21 @@ const SubCategory = ({ subCategory }: CategoryProps) => {
       <ul>
         {subCategory.map(({ categoryEN, categoryKR }, idx) => {
           return (
-            <>
-              <li
-                onClick={() => handleSubCategoryClick(idx)}
-                className="flex items-center justify-between cursor-pointer h-150 all:font-open-sans px-65 border-b-1"
-              >
-                <div>
-                  <p className="text-c-black-300 text-36">{categoryEN}</p>
-                  <p className="text-c-gray-400 text-18">{categoryKR}</p>
-                </div>
-                <DetailButton className="w-24 h-24" />
-              </li>
-            </>
+            <li
+              key={categoryEN}
+              onClick={() => handleSubCategoryClick(idx)}
+              className="flex items-center justify-between cursor-pointer px-25 h-80 sm:h-120 lg:h-150 all:font-open-sans sm:px-45 lg:px-65 border-b-1"
+            >
+              <div>
+                <p className="text-c-black-300 text-20 sm:text-30 lg:text-36">
+                  {categoryEN}
+                </p>
+                <p className="text-c-gray-400 text-15 lg:text-18">
+                  {categoryKR}
+                </p>
+              </div>
+              <DetailButton className="w-18 h-18 sm:w-24 sm:h-24 lg:w-28 lg:h-28" />
+            </li>
           )
         })}
         {modalState && <ClassDetailModal {...subCategory[categoryTarget]} />}

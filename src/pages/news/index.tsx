@@ -6,7 +6,6 @@ import NewsDescription from 'components/news/NewsDescription'
 import NewsList from 'components/news/NewsList'
 import { CategoryListProps } from 'components/news/NewsList/NewsCategory'
 import queryString from 'query-string'
-
 import SEO from 'components/shared/SEO'
 
 type NewsPageProps = {
@@ -65,7 +64,7 @@ const NewsPage = function ({
 
   return (
     <Layout>
-      <SEO title="NEWS" description="텔로스 뉴스 모음" />
+      <SEO title="NEWS" description="뉴스 페이지" />
       <NewsBanner />
       <NewsDescription />
       <NewsList

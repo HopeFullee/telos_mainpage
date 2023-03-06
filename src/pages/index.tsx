@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import MainBanner from 'components/main/MainBanner'
 import MainDescription from 'components/main/MainDescription'
@@ -9,7 +10,19 @@ import MainNews from 'components/main/MainNews'
 import MainContact from 'components/main/MainContact'
 import SEO from 'components/shared/SEO'
 
-const IndexPage = function () {
+type MainPageProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: MainNewsItemType[]
+    }
+  }
+}
+
+const IndexPage = function ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}: MainPageProps) {
   return (
     <Layout>
       {/* 필요시 title description props 전달
@@ -21,10 +34,32 @@ const IndexPage = function () {
       <MainCenterAnimate />
       <MainPhotoZone />
       <MainBottomAnimate />
-      <MainNews />
+      <MainNews mainNewsList={edges} />
       <MainContact />
     </Layout>
   )
 }
 
 export default IndexPage
+
+export const getPostList = graphql`
+  query getPostList {
+    allMarkdownRemark(
+      limit: 3
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY.MM.DD")
+          }
+        }
+      }
+    }
+  }
+`
