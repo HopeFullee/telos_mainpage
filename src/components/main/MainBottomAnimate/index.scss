@@ -1,13 +1,25 @@
-[data-aos='animate-slogun-bg'] {
+[data-aos='aos-init'] {
   background: rgba($color: #eb691b, $alpha: 0);
+
+  span {
+    color: #eb691b;
+  }
+
   &.aos-animate {
     background: rgba($color: #eb691b, $alpha: 1);
-  }
-}
 
-[data-aos='animate-slogun'] {
-  color: #eb691b;
-  &.aos-animate {
-    color: white;
+    span {
+      // animation: textAnimate 1s linear;
+      color: white;
+    }
   }
+
+  // @keyframes textAnimate {
+  //   0% {
+  //     color: #eb691b;
+  //   }
+  //   100% {
+  //     color: white;
+  //   }
+  // }
 }
