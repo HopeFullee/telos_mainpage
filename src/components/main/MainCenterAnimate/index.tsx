@@ -2,6 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper'
 import 'swiper/css'
+import './index.scss'
 
 import animate01 from 'assets/animation_gif/brand_01.gif'
 import animate02 from 'assets/animation_gif/creative_02.png'
@@ -20,46 +21,46 @@ import animate14 from 'assets/animation_gif/service_14.gif'
 import animate15 from 'assets/animation_gif/illust_15.gif'
 
 const RowOne = [
-  <img src={animate01} alt="Branding" className=".gif-item" />,
-  <img src={animate02} alt="Creative" className=".gif-item" />,
-  <img src={animate03} alt="Client" className=".gif-item" />,
-  <img src={animate04} alt="Content" className=".gif-item" />,
-  <img src={animate05} alt="Innovation" className=".gif-item" />,
-  <img src={animate06} alt="Frontend" className=".gif-item" />,
-  <img src={animate07} alt="Graphic" className=".gif-item" />,
-  <img src={animate01} alt="Branding" className=".gif-item" />,
-  <img src={animate02} alt="Creative" className=".gif-item" />,
-  <img src={animate03} alt="Client" className=".gif-item" />,
-  <img src={animate04} alt="Content" className=".gif-item" />,
-  <img src={animate05} alt="Innovation" className=".gif-item" />,
-  <img src={animate06} alt="Frontend" className=".gif-item" />,
-  <img src={animate07} alt="Graphic" className=".gif-item" />,
-  <img src={animate01} alt="Branding" className=".gif-item" />,
-  <img src={animate02} alt="Creative" className=".gif-item" />,
-  <img src={animate03} alt="Client" className=".gif-item" />,
-  <img src={animate04} alt="Content" className=".gif-item" />,
-  <img src={animate05} alt="Innovation" className=".gif-item" />,
-  <img src={animate06} alt="Frontend" className=".gif-item" />,
-  <img src={animate07} alt="Graphic" className=".gif-item" />,
+  <img src={animate01} alt="Branding" className="gif-item" />,
+  <img src={animate02} alt="Creative" className="gif-item" />,
+  <img src={animate03} alt="Client" className="gif-item" />,
+  <img src={animate04} alt="Content" className="gif-item" />,
+  <img src={animate05} alt="Innovation" className="gif-item" />,
+  <img src={animate06} alt="Frontend" className="gif-item" />,
+  <img src={animate07} alt="Graphic" className="gif-item" />,
+  <img src={animate01} alt="Branding" className="gif-item" />,
+  <img src={animate02} alt="Creative" className="gif-item" />,
+  <img src={animate03} alt="Client" className="gif-item" />,
+  <img src={animate04} alt="Content" className="gif-item" />,
+  <img src={animate05} alt="Innovation" className="gif-item" />,
+  <img src={animate06} alt="Frontend" className="gif-item" />,
+  <img src={animate07} alt="Graphic" className="gif-item" />,
+  <img src={animate01} alt="Branding" className="gif-item" />,
+  <img src={animate02} alt="Creative" className="gif-item" />,
+  <img src={animate03} alt="Client" className="gif-item" />,
+  <img src={animate04} alt="Content" className="gif-item" />,
+  <img src={animate05} alt="Innovation" className="gif-item" />,
+  <img src={animate06} alt="Frontend" className="gif-item" />,
+  <img src={animate07} alt="Graphic" className="gif-item" />,
 ]
 
 const RowTwo = [
-  <img src={animate08} alt="Tomorrow" />,
-  <img src={animate09} alt="Backend" />,
-  <img src={animate10} alt="Management" />,
-  <img src={animate11} alt="Challenge" />,
-  <img src={animate12} alt="Market" />,
-  <img src={animate13} alt="Passion" />,
-  <img src={animate14} alt="Service" />,
-  <img src={animate15} alt="Illust" />,
-  <img src={animate08} alt="Tomorrow" />,
-  <img src={animate09} alt="Backend" />,
-  <img src={animate10} alt="Management" />,
-  <img src={animate11} alt="Challenge" />,
-  <img src={animate12} alt="Market" />,
-  <img src={animate13} alt="Passion" />,
-  <img src={animate14} alt="Service" />,
-  <img src={animate15} alt="Illust" />,
+  <img src={animate08} alt="Tomorrow" className="gif-item" />,
+  <img src={animate09} alt="Backend" className="gif-item" />,
+  <img src={animate10} alt="Management" className="gif-item" />,
+  <img src={animate11} alt="Challenge" className="gif-item" />,
+  <img src={animate12} alt="Market" className="gif-item" />,
+  <img src={animate13} alt="Passion" className="gif-item" />,
+  <img src={animate14} alt="Service" className="gif-item" />,
+  <img src={animate15} alt="Illust" className="gif-item" />,
+  <img src={animate08} alt="Tomorrow" className="gif-item" />,
+  <img src={animate09} alt="Backend" className="gif-item" />,
+  <img src={animate10} alt="Management" className="gif-item" />,
+  <img src={animate11} alt="Challenge" className="gif-item" />,
+  <img src={animate12} alt="Market" className="gif-item" />,
+  <img src={animate13} alt="Passion" className="gif-item" />,
+  <img src={animate14} alt="Service" className="gif-item" />,
+  <img src={animate15} alt="Illust" className="gif-item" />,
 ]
 
 const MainCenterAnimate = () => {
@@ -83,24 +84,24 @@ const MainCenterAnimate = () => {
           onAutoplayStop={swiper => swiper.autoplay.start()}
           breakpoints={{
             0: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 20,
             },
             700: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             1000: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 30,
             },
             1300: {
-              slidesPerView: 7,
+              slidesPerView: 6,
               spaceBetween: 30,
             },
             1600: {
-              slidesPerView: 7,
-              spaceBetween: 0,
+              slidesPerView: 6.5,
+              spaceBetween: 30,
             },
           }}
         >
@@ -118,23 +119,23 @@ const MainCenterAnimate = () => {
           onAutoplayStop={swiper => swiper.autoplay.start()}
           breakpoints={{
             0: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 20,
             },
             700: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             1000: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 30,
             },
             1300: {
-              slidesPerView: 7,
+              slidesPerView: 6,
               spaceBetween: 30,
             },
             1600: {
-              slidesPerView: 8,
+              slidesPerView: 6.5,
               spaceBetween: 30,
             },
           }}
