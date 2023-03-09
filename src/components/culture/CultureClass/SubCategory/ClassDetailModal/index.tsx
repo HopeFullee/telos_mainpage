@@ -21,7 +21,6 @@ const ClassDetailModal = ({
 }: CategoryItems) => {
   const [modalState, setModalState] = useRecoilState(modalStateAtom)
   const [isModalOverFlow, setIsModalOverFlow] = useState(false)
-  const [isModalNotOverFlow, setIsModalNotOverFlow] = useState(false)
 
   const handleModalClose = () => {
     setModalState(false)
@@ -37,7 +36,6 @@ const ClassDetailModal = ({
       const handleResize = () => {
         if (modalRef.current.clientHeight > window.innerHeight) {
           setIsModalOverFlow(true)
-          console.log('true??????')
         }
       }
 
@@ -59,29 +57,42 @@ const ClassDetailModal = ({
           'z-30 w-full max-w-600 md:max-w-900 lg:max-w-1250',
         )}
       >
-        <div className="flex flex-col w-full pl-40 bg-c-orange-300 sm:pl-60">
+        <div className="flex flex-col w-full pl-30 bg-c-orange-300 sm:pl-60">
           <button
             onClick={handleModalClose}
             className="z-10 mt-10 ml-auto mr-15"
           >
             <CloseIcon className="w-50 h-50" />
           </button>
-          <p className="font-extrabold text-white font-open-sans text-24 mt-[-25px]">
+          <p className="font-extrabold text-white font-open-sans text-24 mt-[-30px]">
             {rootCategory}
           </p>
-          <div className="flex flex-col items-start sm:flex-row md:items-center pb-25 sm:pb-35 pt-15 sm:pt-25">
+          <div className="flex flex-col items-start pt-20 sm:flex-row md:items-center pb-30 sm:pb-40 sm:pt-30">
             <ClassIcon className={categoryEN} />
-            <div className="sm:ml-20 sm:mt-[-10px] md:mt-[-15px] pr-40 sm:pr-60">
-              <h4 className="font-extrabold outline-title font-open-sans text-32 md:text-42 text-c-orange-300">
+            <div className="sm:ml-20 mt-10 sm:mt-[-8px] md:mt-[-15px] pr-40 sm:pr-60">
+              <h4 className="font-extrabold leading-snug md:leading-normal outline-title font-open-sans text-32 md:text-42 text-c-orange-300">
                 {categoryEN}
               </h4>
-              <p className="mt-5 text-white md:mt-auto text-18">{categoryKR}</p>
+              <p className="mt-8 text-white md:mt-auto text-18">{categoryKR}</p>
             </div>
           </div>
         </div>
 
-        <article className="px-40 bg-white py-50 sm:px-70 all:break-keep">
-          <p className="font-medium text-18 text-c-black-300 ">{description}</p>
+        <article className="bg-white p-30 lg:min-h-630 sm:py-40 sm:px-70 all:break-keep">
+          {isModalOverFlow ? (
+            <p className="font-medium leading-relaxed text-18 text-c-black-300">
+              {description}
+            </p>
+          ) : (
+            description.map(elem => {
+              return (
+                <p className="font-medium leading-relaxed text-18 text-c-black-300 ">
+                  {elem}
+                </p>
+              )
+            })
+          )}
+
           {currentLayoutType === 'A' && (
             <ATypeLayout
               dutyList={dutyList.singleList}

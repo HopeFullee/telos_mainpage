@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 const AboutBanner = () => {
   const { aboutBannerBg } = useAboutGatsbyImages()
   return (
-    <section className="w-full h-[95vh]">
+    <section className="w-full min-h-[95vh] h-[95vh]">
       <BackgroundImage
         Tag="article"
         className="w-full h-full flex-center under:text-white px-30 sm:px-40 lg:px-50"
@@ -13,11 +13,11 @@ const AboutBanner = () => {
         role="img"
         aria-label="AboutPage Banner Background"
       >
-        <div className="flex flex-col justify-center gap-30 all:drop-shadow-lg lg:flex lg:flex-row lg:gap-130">
+        <div className="flex flex-col justify-center gap-10 sm:gap-20 all:drop-shadow-lg lg:flex lg:flex-row lg:gap-130">
           <h2 className="mt-10 font-extrabold leading-snug w-240 sm:w-370 lg:w-440 text-35 sm:text-55 lg:text-65 font-open-sans">
             INNOVATION begins with a bit of DIFFERENCE
           </h2>
-          <div className="leading-wide sm:text-20 lg:text-24 font-light max-w-890 under:mt-[1em] break-keep">
+          <div className="leading-wide sm:text-20 lg:text-24 font-light max-w-890 under:mt-[1em] break-keep pb-50 lg:pb-0">
             <p>
               지우개 연필, 접는 자전거, 주름 빨대, 종이 가방... 아주 작은 차이는
               혁신으로 나타납니다. 현대에는 수 많은 제품들과 서비스들이

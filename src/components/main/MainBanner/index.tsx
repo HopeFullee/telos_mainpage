@@ -15,7 +15,7 @@ const MainBanner = () => {
         </p>
       </div>
 
-      <ArrowDown className="absolute left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] bottom-0" />
+      <ArrowDown className="absolute left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] bottom-30" />
     </div>
   )
 }

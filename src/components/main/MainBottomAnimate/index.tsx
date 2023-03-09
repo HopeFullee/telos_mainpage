@@ -6,21 +6,19 @@ const MainBottomAnimate = () => {
   useEffect(() => {
     AOS.init({
       easing: 'linear',
-      duration: 500,
-      anchorPlacement: 'center-center',
-      initClassName: 'aos-init',
-      mirror: true,
-      offset: -300,
+      duration: 200,
+      offset: 400,
     })
   }, [])
-
   return (
-    <section data-aos="aos-end" className="all:ease-linear">
+    <section className="relative min-h-[180vh] w-full select-none">
       <article
+        id="animateStart"
         data-aos="aos-init"
-        className="relative flex justify-center h-[200vh] duration-200 z-20 bg-c-orange-300"
+        data-aos-anchor-placement="center-center"
+        className="absolute items-center w-full h-[180vh] duration-200"
       >
-        <span className="sticky top-0 leading-[100vh] h-[100vh] duration-75 text-white text-[6em] font-open-sans font-bold">
+        <span className="px-20 sm:px-50 sticky top-0 flex-center text-center leading-tight h-[110vh] duration-75 text-white text-50 sm:text-80 lg:text-100 font-open-sans font-extrabold">
           Raise your flag to tomorrow
         </span>
       </article>

@@ -8,7 +8,7 @@ export const modalStateAtom = atom<ModalState>({
 })
 
 export const layoutTypes = {
-  'Service Planner': 'A',
+  'Strategic Planner': 'A',
   'Game Contents Planner': 'A',
   'Unity Client Developer': 'A',
   'Front-end Developer': 'B',
@@ -24,8 +24,7 @@ export type CategoryItems = {
   rootCategory: string
   categoryEN: keyof typeof layoutTypes
   categoryKR: string
-  description: string
-
+  description: string[]
   dutyList: {
     singleList: string[]
     multiList: {
@@ -58,11 +57,20 @@ export const SoftCategoryAtom = atom<CategoryType>({
   default: [
     {
       rootCategory: 'Soft',
-      categoryEN: 'Service Planner',
-      categoryKR: '서비스 기획자',
-      description: '',
+      categoryEN: 'Strategic Planner',
+      categoryKR: '사업 기획자',
+      description: [
+        '기술을 이해하고 시장의 흐름을 읽어 회사의 방향을 정하는 키잡이 역할을 합니다. ',
+        '전략적으로 사고하고, 회사의 비전을 설계하여 말과 글로 표현합니다. ',
+      ],
       dutyList: {
-        singleList: ['코파기', '라면먹기', '집가서 더포레 2하기'],
+        singleList: [
+          '시장 조사·자료 분석·정보 재구성',
+          'RFP 분석, 제안 전략 수립',
+          '연구개발과제 사업 제안서 및 B2B 기술 제안서 작성',
+          '수행 과제의 중간 보고, 종료 과제의 최종 보고 작성 및 대응',
+          '사업 진행 주관기관, 수행/참여기관 및 담당자 소통',
+        ],
         multiList: {
           listOne: { listSubTitle: '', list: [] },
           listTwo: { listSubTitle: '', list: [] },
@@ -70,15 +78,27 @@ export const SoftCategoryAtom = atom<CategoryType>({
           listFour: { listSubTitle: '', list: [] },
         },
       },
-      requirementList: ['피자스쿨 졸업자', '정보처리했나자격증', 'MD세대'],
-      preferList: ['아침에 빽다방 가실분', '이쁜 눈나'],
+      requirementList: [
+        '본인의 아이디어를 기획하여 공적 문서로 표현할 수 있는 분',
+        '협업에 능숙하고 내외부 소통이 원활한 분',
+        '한글, 파워포인트, 엑셀 애플리케이션 사용이 가능한 분',
+      ],
+      preferList: [
+        '사업 기획에 대한 이해와 경험이 있는 분',
+        '한글, 파워포인트, 엑셀 애플리케이션 사용이 능숙한 분',
+        'VR/AR, 메타버스, 3D, IoT 등 기술에 대한 이해도가 높으신 분',
+        '이공계열 전공자 혹은 상경계열 관련 전공자',
+        '정부 과제 및 기술 제안 유경험자',
+      ],
     },
     {
       rootCategory: 'Soft',
       categoryEN: 'Game Contents Planner',
       categoryKR: '게임 콘텐츠 기획자',
-      description:
-        '게임에 재미가 되어줄 콘텐츠를 디자인하고 시스템을 설계합니다. 개발에 필요한 기획서를 만들고 다양한 파트와 협업하여 게임 개발을 진행합니다.',
+      description: [
+        '게임에 재미가 되어줄 콘텐츠를 디자인하고 시스템을 설계합니다. ',
+        '개발에 필요한 기획서를 만들고 다양한 파트와 협업하여 게임 개발을 진행합니다. ',
+      ],
 
       dutyList: {
         singleList: [
@@ -110,8 +130,11 @@ export const SoftCategoryAtom = atom<CategoryType>({
       rootCategory: 'Soft',
       categoryEN: 'Unity Client Developer',
       categoryKR: '유니티 클라이언트 개발자',
-      description:
-        '프로그램을 제작하는 다양한 영역 중, 화면에 보이는 부분과 그에 관련된 기능들을 직접 작업합니다. 사용자가 프로그램을 사용할 때, 편리성과 경험성 그리고 심미성을 가지게 합니다. 이것들을 최적화된 성능으로 구현하기 위해 끊임없이 고민하고 더 나은 방향을 모색합니다. Unity 개발 엔진을 사용해서 개발하며 이에 알맞는 여러가지 기술을 습득해 프로그램에 적용합니다.',
+      description: [
+        '프로그램을 제작하는 다양한 영역 중, 화면에 보이는 부분과 그에 관련된 기능들을 직접 작업합니다. 사용자가 프로그램을 사용할 때, ',
+        '편리성과 경험성 그리고 심미성을 가지게 합니다. 이것들을 최적화된 성능으로 구현하기 위해 끊임없이 고민하고 더 나은 방향을 모색합니다. ',
+        'Unity 개발 엔진을 사용해서 개발하며 이에 알맞는 여러가지 기술을 습득해 프로그램에 적용합니다.',
+      ],
       dutyList: {
         singleList: [
           'Unity Engine을 사용해 프로그램을 개발',
@@ -142,8 +165,10 @@ export const SoftCategoryAtom = atom<CategoryType>({
       rootCategory: 'Soft',
       categoryEN: 'Front-end Developer',
       categoryKR: '프론트엔드 개발자',
-      description:
-        '사용자가 편리하게 사용하고 경험할 수 있는 UI/UX의 최적화에 초점을 맞추어 서비스를 개발하고 구현합니다.',
+      description: [
+        '사용자가 편리하게 사용하고 경험할 수 있는 ',
+        'UI/UX의 최적화에 초점을 맞추어 서비스를 개발하고 구현합니다.',
+      ],
       dutyList: {
         singleList: [
           '자체 웹 서비스 프로젝트 개발 및 운영',
@@ -176,8 +201,10 @@ export const SoftCategoryAtom = atom<CategoryType>({
       rootCategory: 'Soft',
       categoryEN: 'Back-end Developer',
       categoryKR: '백엔드 개발자',
-      description:
-        '사용자들에게 원하는 정보를 제공할 수 있도록 데이터를 관리합니다. 안정적인 서비스를 제공 및 유지하기 위해 서버를 개발하고 구축 및 관리합니다.',
+      description: [
+        '사용자들에게 원하는 정보를 제공할 수 있도록 데이터를 관리합니다. ',
+        '안정적인 서비스를 제공 및 유지하기 위해 서버를 개발하고 구축 및 관리합니다.',
+      ],
       dutyList: {
         singleList: [
           '자체 웹 서비스 프로젝트 개발 및 운영',
@@ -212,8 +239,11 @@ export const SoftCategoryAtom = atom<CategoryType>({
       rootCategory: 'Soft',
       categoryEN: '2D Graphic Designer',
       categoryKR: '2D 그래픽 디자이너',
-      description:
-        '콘텐츠의 전반적인 키 비주얼을 구축하는 역할을 합니다. 다양한 그래픽 툴을 활용하여 기획된 시나리오의 컨셉을 시각적으로 표현합니다.',
+      description: [
+        '콘텐츠의 전반적인 키 비주얼을 구축하는 역할을 합니다. ',
+        '다양한 그래픽 툴을 활용하여 기획된 시나리오의 컨셉을 시각적으로 표현합니다.',
+      ],
+
       dutyList: {
         singleList: [
           '2D 캐릭터 및 배경 원화 및 컨셉아트 디자인',
@@ -242,8 +272,10 @@ export const SoftCategoryAtom = atom<CategoryType>({
       rootCategory: 'Soft',
       categoryEN: '3D Modeler',
       categoryKR: '3D 모델러',
-      description:
-        '3D 환경 구축을 통해 콘텐츠에 숨결을 불어넣는 역할을 합니다. 다양한 그래픽 툴과 Unity 엔진을 활용해 콘텐츠의 환경을 구축하고 캐릭터 리깅 및 애니메이션을 제작합니다.',
+      description: [
+        '3D 환경 구축을 통해 콘텐츠에 숨결을 불어넣는 역할을 합니다. ',
+        '다양한 그래픽 툴과 Unity 엔진을 활용해 콘텐츠의 환경을 구축하고 캐릭터 리깅 및 애니메이션을 제작합니다.',
+      ],
       dutyList: {
         singleList: [
           '3ds max를 활용한 캐릭터/배경 게임 에셋 제작',
@@ -275,8 +307,10 @@ export const BrandingCategoryAtom = atom<CategoryType>({
       rootCategory: 'Branding',
       categoryEN: 'BX Designer',
       categoryKR: '브랜드 경험 디자이너',
-      description:
-        '가치있는 브랜드를 만들고 활기를 불어 넣어주는 역할을 합니다. 다양한 분야의 비주얼 컨셉을 기획하고 브랜드가 추구하는 아이덴티티를 시각적으로 표현합니다.',
+      description: [
+        '가치있는 브랜드를 만들고 활기를 불어 넣어주는 역할을 합니다. ',
+        '다양한 분야의 비주얼 컨셉을 기획하고 브랜드가 추구하는 아이덴티티를 시각적으로 표현합니다.',
+      ],
       dutyList: {
         singleList: [
           '브랜드 비주얼 전략 수립 및 키 비주얼 제작',
@@ -308,8 +342,10 @@ export const BrandingCategoryAtom = atom<CategoryType>({
       rootCategory: 'Branding',
       categoryEN: 'Marketer',
       categoryKR: '마케터',
-      description:
-        '브랜드 가치를 극대화함을 목표로 합니다. 온라인부터 오프라인, 자체 브랜드부터 타사 브랜드까지 다양한 분야의 마케팅과 브랜딩 솔루션을 제공합니다.',
+      description: [
+        '브랜드 가치를 극대화함을 목표로 합니다. ',
+        '온라인부터 오프라인, 자체 브랜드부터 타사 브랜드까지 다양한 분야의 마케팅과 브랜딩 솔루션을 제공합니다.',
+      ],
       dutyList: {
         singleList: [
           '자체브랜드 기획',
@@ -349,8 +385,10 @@ export const TelosCategoryAtom = atom<CategoryType>({
       rootCategory: 'Telos',
       categoryEN: 'Management Supporter',
       categoryKR: '경영지원(회계)',
-      description:
-        '회계, 경영관리, 인사, 총무 등의 역할로서 구성원들이 안정적인 회사생활을 할 수 있도록 지원하는 역할을 합니다. 업무에 몰입하여 시너지를 낼 수 있는 환경을 조성하고 각 부문의 경영활동을 조율하는 역할을 수행하게 됩니다.',
+      description: [
+        '회계, 경영관리, 인사, 총무 등의 역할로서 구성원들이 안정적인 회사생활을 할 수 있도록 지원하는 역할을 합니다. ',
+        '업무에 몰입하여 시너지를 낼 수 있는 환경을 조성하고 각 부문의 경영활동을 조율하는 역할을 수행하게 됩니다.',
+      ],
       dutyList: {
         singleList: [],
         multiList: {

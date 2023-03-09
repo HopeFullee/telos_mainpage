@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddButton } from 'components/shared/Icons'
+import { DetailButton } from 'components/shared/Icons'
 import { Link } from 'gatsby'
 
 type MainNewsProps = {
@@ -8,11 +8,11 @@ type MainNewsProps = {
 
 const MainNews = ({ mainNewsList }: MainNewsProps) => {
   return (
-    <section className="mx-auto px-30 mt-100 sm:mt-150 lg:mt-200 max-w-1450 sm:px-40 lg:px-50">
+    <section className="px-10 mx-auto mt-150 sm:mt-200 lg:mt-250 max-w-1450 sm:px-40 lg:px-50">
       <h4 className="font-bold text-center font-open-sans text-36 sm:text-46 lg:text-52">
         Telos News
       </h4>
-      <ul className="mt-20 border-t-2 all:truncate sm:mt-45 border-c-black-300 under:border-b-1 under:border-c-gray-300 under:flex under:justify-between under:px-10 under:py-20 under:sm:px-30 under:lg:px-50 under:sm:py-25 under:lg:py-35 under:items-center">
+      <ul className="mt-20 border-t-2 all:truncate sm:mt-30 border-c-black-300 under:border-b-1 under:border-c-gray-300 under:flex under:justify-between under:px-10 under:py-20 under:sm:px-30 under:lg:px-50 under:sm:py-25 under:lg:py-35 under:items-center">
         {mainNewsList.map(
           ({
             node: {
@@ -22,8 +22,8 @@ const MainNews = ({ mainNewsList }: MainNewsProps) => {
           }) => {
             return (
               <Link key={title} to={slug}>
-                <li className="flex justify-between w-full">
-                  <div>
+                <li className="flex items-center justify-between w-full">
+                  <div className="max-w-[90%]">
                     <p className="text-16 sm:text-18 lg:text-22 text-c-gray-400">
                       {date}
                     </p>
@@ -31,7 +31,7 @@ const MainNews = ({ mainNewsList }: MainNewsProps) => {
                       {title}
                     </p>
                   </div>
-                  <AddButton className="h-50 w-50 sm:h-65 sm:w-65 lg:h-75 lg:w-75" />
+                  <DetailButton className="w-15 h-15 sm:h-20 sm:w-20 lg:h-25 lg:w-25" />
                 </li>
               </Link>
             )

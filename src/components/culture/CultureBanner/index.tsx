@@ -19,7 +19,7 @@ const CultureBanner = () => {
         </h2>
       </div>
 
-      <div className="md:max-w-800 lg:max-w-1200 w-full all:!ease-linear">
+      <div className="pointer-events-none select-none md:max-w-800 lg:max-w-1200 w-full all:!ease-linear">
         <Swiper
           allowTouchMove={false}
           loopedSlides={1}
@@ -45,16 +45,16 @@ const CultureBanner = () => {
           }}
         >
           <SwiperSlide>
-            <GatsbyImage image={cultureBanner01} alt="asd" />
+            <GatsbyImage image={cultureBanner01} alt="TelosPhoto01" />
           </SwiperSlide>
           <SwiperSlide>
-            <GatsbyImage image={cultureBanner02} alt="asd" />
+            <GatsbyImage image={cultureBanner02} alt="TelosPhoto02" />
           </SwiperSlide>
           <SwiperSlide>
-            <GatsbyImage image={cultureBanner03} alt="asd" />
+            <GatsbyImage image={cultureBanner03} alt="TelosPhoto03" />
           </SwiperSlide>
           <SwiperSlide>
-            <GatsbyImage image={cultureBanner04} alt="asd" />
+            <GatsbyImage image={cultureBanner04} alt="TelosPhoto04" />
           </SwiperSlide>
         </Swiper>
       </div>

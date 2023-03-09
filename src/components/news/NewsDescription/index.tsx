@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsDescription = function () {
   return (
-    <div className="mx-auto mt-20 ssm:mt-40 px-30 ssm:px-50 max-w-1600 text-c-black-300">
+    <div className="mx-auto mt-30 sm:mt-40 md:mt-60 px-30 sm:px-50 max-w-1600 text-c-black-300">
       <h2 className="font-bold text-36 ssm:text-40 md:text-44 font-open-sans">
         News
       </h2>

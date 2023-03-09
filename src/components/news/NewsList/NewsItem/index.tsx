@@ -14,10 +14,10 @@ const NewsItem = ({
   link,
 }: NewsItemProps) => {
   return (
-    <Link to={link}>
+    <Link to={link} className="overflow-hidden">
       <article>
         <GatsbyImage
-          className="w-full h-full"
+          className="w-full"
           image={gatsbyImageData}
           alt={'텔로스 뉴스 썸네일 이미지'}
         />

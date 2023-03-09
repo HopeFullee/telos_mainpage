@@ -1,4 +1,5 @@
-[data-aos='aos-init'] {
+#animateStart {
+  z-index: 10;
   background: rgba($color: #eb691b, $alpha: 0);
 
   span {
@@ -9,17 +10,7 @@
     background: rgba($color: #eb691b, $alpha: 1);
 
     span {
-      // animation: textAnimate 1s linear;
       color: white;
     }
   }
-
-  // @keyframes textAnimate {
-  //   0% {
-  //     color: #eb691b;
-  //   }
-  //   100% {
-  //     color: white;
-  //   }
-  // }
 }

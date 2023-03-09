@@ -10,7 +10,7 @@ const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Setup Import Alias
-exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, getConfig, actions }) => {
   const output = getConfig().output || {}
 
   actions.setWebpackConfig({
@@ -25,6 +25,24 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
       },
     },
   })
+
+  if (stage === 'build-javascript' || stage === 'develop') {
+    const config = getConfig()
+
+    const miniCss = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin',
+    )
+
+    if (miniCss) {
+      miniCss.options.ignoreOrder = true
+    }
+
+    actions.replaceWebpackConfig(config)
+
+    actions.setWebpackConfig({
+      plugins: [plugins.provide({ process: 'process/browser' })],
+    })
+  }
 }
 
 // Generate a Slug Each Post Data

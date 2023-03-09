@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col flex-wrap mt-120 px-30 py-30 sm:py-40 md:flex-row sm:px-60 md:py-60 md:px-80 lg:px-120 sm:justify-between border-t-1">
+    <footer className="flex flex-col flex-wrap py-25 mt-80 sm:mt-120 px-30 sm:py-30 md:flex-row sm:px-60 lg:py-42 md:px-80 lg:px-120 sm:justify-between border-t-1">
       <div className="all:font-open-sans all:text-c-gray-400 lg:all:text-18 break-keep">
         <p className="!text-c-orange-300 !font-extrabold !text-28 lg:!text-32">
           TELOS
@@ -19,8 +19,6 @@ const Footer = () => {
 
       <div className="mt-40 md:mt-0 all:font-open-sans all:text-c-gray-400">
         <div className="flex flex-wrap items-center gap-20 font-bold text-18 lg:all:text-22">
-          <a href="#">회사소개서</a>
-          <span className="w-2 h-22 bg-c-gray-300"></span>
           <a href="https://www.instagram.com/telos_official/">Instagram</a>
           <span className="w-2 h-22 bg-c-gray-300"></span>
           <a href="https://blog.naver.com/telos_official">Blog</a>

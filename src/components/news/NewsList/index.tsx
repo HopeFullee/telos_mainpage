@@ -19,11 +19,11 @@ const NewsList = function ({
     useMoreNewsItems(selectedCategory, posts)
   return (
     <section
-      className="mx-auto mt-30 ssm:mt-40 md:mt-60 px-30 ssm:px-50 max-w-1600"
+      className="mx-auto mt-40 md:mt-60 px-30 sm:px-50 max-w-1600"
       ref={containerRef}
     >
       <NewsCategory selectedCategory={selectedCategory} {...rest} />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-35 gap-30 sm:gap-45">
+      <div className="grid mt-45 sm:grid-cols-2 lg:grid-cols-3 sm:mt-60 md:mt-70 lg:mt-80 gap-30 sm:gap-45">
         {postList.map(
           ({
             node: {

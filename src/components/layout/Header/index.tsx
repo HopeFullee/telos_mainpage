@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { TelosLogo, HamburgerIcon } from 'components/shared/Icons'
 import { Link } from 'gatsby'
-import Navbar from '../Navbar'
+import Navbar from './Navbar'
 import { LocationContext } from '@reach/router'
 import clsx from 'clsx'
 import './index.scss'
