@@ -1577,6 +1577,11 @@
   resolved "https://registry.npmjs.org/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.3.tgz"
   integrity sha512-cK+Elf3RjEzrm3SerAhrFWL5oQAsZSJ/LmjL1joIpTfEP1etJJ9CTRvdaV6XLYAxaEkfdhk/9hOvHLbR9yIhCA==
 
+"@mediacurrent/gatsby-plugin-silence-css-order-warning@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@mediacurrent/gatsby-plugin-silence-css-order-warning/-/gatsby-plugin-silence-css-order-warning-1.0.0.tgz#64ad52c5e56e01db7a77dab20f806ef99269affd"
+  integrity sha512-TiBIncOzH5JtjHxZ43D4KmsZcjaKaGtl4p9+9HbhdDSNC5DcS3KpIJWT0nS0qnSd2QlbDRx44XAkrl4GZpIwTA==
+
 "@mischnic/json-sourcemap@^0.1.0":
   version "0.1.0"
   resolved "https://registry.npmjs.org/@mischnic/json-sourcemap/-/json-sourcemap-0.1.0.tgz"

@@ -14,6 +14,7 @@ module.exports = {
     siteUrl: `http://localhost:8000`,
   },
   plugins: [
+    '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
