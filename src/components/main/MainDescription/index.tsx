@@ -43,14 +43,15 @@ const MainDescription = () => {
       </div>
 
       <div className="flex flex-col items-center gap-50 md:gap-40 md:items-start lg:gap-50 md:flex-row">
-        <article className="relative flex flex-col items-center cursor-pointer max-w-550 md:max-w-750 under:hover:opacity-100">
-          <GatsbyImage
-            image={telosSoftHover}
-            alt={'텔로스 소프트 이미지'}
-            className="absolute z-10 transition-all duration-300 ease-in-out opacity-0"
-          />
-          <GatsbyImage image={telosSoft} alt={'텔로스 소프트 이미지'} />
-
+        <article className="flex flex-col items-center cursor-pointer max-w-550 md:max-w-750">
+          <div className="relative under:hover:opacity-100">
+            <GatsbyImage
+              image={telosSoftHover}
+              alt={'텔로스 소프트 이미지'}
+              className="!absolute z-10 transition-all duration-300 ease-in-out opacity-0"
+            />
+            <GatsbyImage image={telosSoft} alt={'텔로스 소프트 이미지'} />
+          </div>
           <div className="w-full px-10 leading-relaxed text-center py-15 sm:py-25 lg:py-35 bg-c-gray-200 ">
             <h4 className="font-bold text-20 sm:text-22 lg:text-28 text-c-black-300">
               텔로스 소프트
@@ -61,14 +62,15 @@ const MainDescription = () => {
           </div>
         </article>
 
-        <article className="relative flex flex-col items-center cursor-pointer max-w-550 md:max-w-750 under:hover:opacity-100">
-          <GatsbyImage
-            image={telosBrandingHover}
-            alt={'텔로스 브랜딩 이미지'}
-            className="absolute z-10 transition-all duration-300 ease-in-out opacity-0"
-          />
-          <GatsbyImage image={telosBranding} alt={'텔로스 브랜딩 이미지'} />
-
+        <article className="flex flex-col items-center cursor-pointer max-w-550 md:max-w-750">
+          <div className="relative under:hover:opacity-100">
+            <GatsbyImage
+              image={telosBrandingHover}
+              alt={'텔로스 브랜딩 이미지'}
+              className="!absolute z-10 transition-all duration-300 ease-in-out opacity-0"
+            />
+            <GatsbyImage image={telosBranding} alt={'텔로스 브랜딩 이미지'} />
+          </div>
           <div className="w-full px-10 leading-relaxed text-center py-15 sm:py-25 lg:py-35 bg-c-gray-200 ">
             <h4 className="font-bold text-20 sm:text-22 lg:text-28 text-c-black-300">
               텔로스 브랜딩
