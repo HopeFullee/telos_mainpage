@@ -36,10 +36,10 @@ const NewsList = function ({
           },
         )}
       </div>
-      <div className="flex justify-center mt-80 md:mt-120">
+      <div className="flex justify-center mt-70 md:mt-110">
         {!isEnd && (
           <button
-            className="all:w-full all:h-70 all:sm:h-80 all:md:h-100"
+            className="mb-50 all:w-full all:h-70 all:sm:h-80 all:md:h-100"
             onClick={() => more()}
           >
             <MoreButton />
