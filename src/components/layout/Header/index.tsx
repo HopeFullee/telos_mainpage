@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import './index.scss'
 import { useRecoilValue } from 'recoil'
 import headerStateAtom from './store'
+import { modalStateAtom } from 'store'
 
 type Props = {
   currentPath: LocationContext

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DetailButton } from 'components/shared/Icons'
 import ClassDetailModal from './ClassDetailModal'
 import { modalStateAtom } from '../../../../store'
 import { useRecoilState } from 'recoil'
 import { CategoryType } from '../../../../store'
+import { LocationContext } from '@reach/router'
 
 type CategoryProps = {
   subCategory: CategoryType
@@ -16,8 +17,13 @@ const SubCategory = ({ subCategory }: CategoryProps) => {
   const handleSubCategoryClick = (idx: number) => {
     setCategoryTarget(idx)
     setModalState(true)
-    document.body.classList.add('overflow-y-hidden')
+    // 모달이 켜져 있는 상태에서만 마우스 스크롤 중지
+    if (modalState) document.body.classList.add('overflow-y-hidden')
   }
+
+  useEffect(() => {
+    console.log()
+  }, [])
 
   return (
     <>

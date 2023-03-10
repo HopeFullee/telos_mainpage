@@ -14,7 +14,6 @@ const MainBottomAnimate = () => {
         id="animateStart"
         data-aos="aos-init"
         data-aos-anchor-placement="center-center"
-        data-aos-offset="0"
         data-aos-duration="200"
         className="absolute items-center w-full h-[180vh] duration-200"
       >
