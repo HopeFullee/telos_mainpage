@@ -2,15 +2,36 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper'
 import 'swiper/css'
-
+import 'swiper/css/effect-coverflow'
+import './index.scss'
+import { EffectCoverflow } from 'swiper'
 import { useCultureGatsbyImage } from 'hooks/useCultureGatsbyImage'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import clsx from 'clsx'
 
 const CultureBanner = () => {
-  const { cultureBanner01, cultureBanner02, cultureBanner03, cultureBanner04 } =
-    useCultureGatsbyImage()
+  const {
+    cultureBanner01,
+    cultureBanner02,
+    cultureBanner03,
+    cultureBanner04,
+    cultureBanner05,
+    cultureBanner06,
+    cultureBanner07,
+  } = useCultureGatsbyImage()
+
+  const imageList = [
+    cultureBanner01,
+    cultureBanner02,
+    cultureBanner03,
+    cultureBanner04,
+    cultureBanner05,
+    cultureBanner06,
+    cultureBanner07,
+  ]
 
   SwiperCore.use([Autoplay])
+
   return (
     <section className="flex flex-col justify-between overflow-x-hidden gap-30 mt-50 md:flex-row sm:gap-40 lg:gap-100 sm:mt-70 md:mt-80 lg:mt-100">
       <div>
@@ -21,14 +42,24 @@ const CultureBanner = () => {
 
       <div className="pointer-events-none select-none md:max-w-800 lg:max-w-1200 w-full all:!ease-linear">
         <Swiper
+          // effect="coverflow"
           allowTouchMove={false}
-          loopedSlides={1}
-          slidesPerView={1}
+          loopedSlides={2}
+          slidesPerView={2}
           loop={true}
-          speed={6000}
+          speed={3000}
           autoplay={{ delay: 0, waitForTransition: true }}
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}
+          watchSlidesProgress
+          // coverflowEffect={{
+          //   rotate: 10,
+          //   stretch: 0,
+          //   depth: 10,
+          //   modifier: 1,
+          //   slideShadows: true,
+          // }}
+          // modules={[EffectCoverflow]}
           breakpoints={{
             0: {
               spaceBetween: 10,
@@ -40,22 +71,25 @@ const CultureBanner = () => {
               spaceBetween: 17,
             },
             1100: {
-              spaceBetween: 25,
+              spaceBetween: 35,
             },
           }}
         >
-          <SwiperSlide>
-            <GatsbyImage image={cultureBanner01} alt="TelosPhoto01" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <GatsbyImage image={cultureBanner02} alt="TelosPhoto02" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <GatsbyImage image={cultureBanner03} alt="TelosPhoto03" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <GatsbyImage image={cultureBanner04} alt="TelosPhoto04" />
-          </SwiperSlide>
+          {imageList.map((image, idx) => {
+            return (
+              <SwiperSlide key={`CultureBannerKey${idx}`}>
+                {({ isActive }) => (
+                  <div className="overflow-hidden">
+                    <GatsbyImage
+                      className={clsx(isActive ? 'culture-banner-active' : '')}
+                      image={image}
+                      alt={`텔로스 베너 이미지 ${idx}`}
+                    />
+                  </div>
+                )}
+              </SwiperSlide>
+            )
+          })}
         </Swiper>
       </div>
     </section>

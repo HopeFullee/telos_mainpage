@@ -13,7 +13,7 @@ const MainPhotoZone = () => {
     })
   }, [])
   return (
-    <section className="flex flex-col w-full px-40 mt-130 sm:mt-170 lg:mt-250 md:px-100">
+    <section className="flex flex-col w-full px-40 overflow-x-hidden mt-130 sm:mt-170 lg:mt-250 md:px-100">
       <article className="flex justify-center gap-[5%]">
         <div className="mt-[35%]">
           <img

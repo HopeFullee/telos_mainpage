@@ -28,6 +28,16 @@ export const useCultureGatsbyImage = () => {
           gatsbyImageData(quality: 100)
         }
       }
+      CultureBanner06: file(name: { eq: "culture_banner_06" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100)
+        }
+      }
+      CultureBanner07: file(name: { eq: "culture_banner_07" }) {
+        childImageSharp {
+          gatsbyImageData(quality: 100)
+        }
+      }
     }
   `)
 
@@ -41,6 +51,10 @@ export const useCultureGatsbyImage = () => {
     imageData.CultureBanner04.childImageSharp.gatsbyImageData
   const cultureBanner05 =
     imageData.CultureBanner05.childImageSharp.gatsbyImageData
+  const cultureBanner06 =
+    imageData.CultureBanner06.childImageSharp.gatsbyImageData
+  const cultureBanner07 =
+    imageData.CultureBanner07.childImageSharp.gatsbyImageData
 
   return {
     cultureBanner01,
@@ -48,5 +62,7 @@ export const useCultureGatsbyImage = () => {
     cultureBanner03,
     cultureBanner04,
     cultureBanner05,
+    cultureBanner06,
+    cultureBanner07,
   }
 }
