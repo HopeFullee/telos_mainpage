@@ -4,10 +4,8 @@ import SwiperCore, { Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import './index.scss'
-import { EffectCoverflow } from 'swiper'
 import { useCultureGatsbyImage } from 'hooks/useCultureGatsbyImage'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import clsx from 'clsx'
 
 const CultureBanner = () => {
   const {
@@ -32,6 +30,23 @@ const CultureBanner = () => {
 
   SwiperCore.use([Autoplay])
 
+  const ANIMATION_TERM = 1600
+
+  const itemAnimate = (eventTarget: HTMLDivElement) =>
+    new Promise(res => {
+      if (!eventTarget.classList.contains('culture-banner-active')) {
+        eventTarget.classList.add('culture-banner-active')
+        setTimeout(res, ANIMATION_TERM)
+      }
+    })
+
+  const handleItemHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    const eventTarget = e.target as HTMLDivElement
+    itemAnimate(eventTarget).then(() => {
+      eventTarget.classList.remove('culture-banner-active')
+    })
+  }
+
   return (
     <section className="flex flex-col justify-between overflow-x-hidden gap-30 mt-50 md:flex-row sm:gap-40 lg:gap-100 sm:mt-70 md:mt-80 lg:mt-100">
       <div>
@@ -40,9 +55,8 @@ const CultureBanner = () => {
         </h2>
       </div>
 
-      <div className="pointer-events-none select-none md:max-w-800 lg:max-w-1200 w-full all:!ease-linear">
+      <div className=" select-none md:max-w-800 lg:max-w-1200 w-full all:!ease-linear">
         <Swiper
-          // effect="coverflow"
           allowTouchMove={false}
           loopedSlides={2}
           slidesPerView={2}
@@ -52,14 +66,6 @@ const CultureBanner = () => {
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}
           watchSlidesProgress
-          // coverflowEffect={{
-          //   rotate: 10,
-          //   stretch: 0,
-          //   depth: 10,
-          //   modifier: 1,
-          //   slideShadows: true,
-          // }}
-          // modules={[EffectCoverflow]}
           breakpoints={{
             0: {
               spaceBetween: 10,
@@ -78,15 +84,15 @@ const CultureBanner = () => {
           {imageList.map((image, idx) => {
             return (
               <SwiperSlide key={`CultureBannerKey${idx}`}>
-                {({ isActive }) => (
-                  <div className="overflow-hidden">
-                    <GatsbyImage
-                      className={clsx(isActive ? 'culture-banner-active' : '')}
-                      image={image}
-                      alt={`텔로스 베너 이미지 ${idx}`}
-                    />
-                  </div>
-                )}
+                <div
+                  onMouseOver={e => handleItemHover(e)}
+                  className="overflow-hidden"
+                >
+                  <GatsbyImage
+                    image={image}
+                    alt={`텔로스 베너 이미지 ${idx}`}
+                  />
+                </div>
               </SwiperSlide>
             )
           })}
