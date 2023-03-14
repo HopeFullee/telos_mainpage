@@ -11,7 +11,7 @@ module.exports = {
     title: `Telos`,
     description: `Raise your flag to tomorrow`,
     author: `@Telos`,
-    siteUrl: `http://localhost:8000`,
+    siteUrl: `https://hopefullee.github.io/`,
   },
   pathPrefix: '/hopefullee.github.io',
   plugins: [
