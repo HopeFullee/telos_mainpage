@@ -13,7 +13,7 @@ module.exports = {
     author: `@Telos`,
     siteUrl: `https://hopefullee.github.io/`,
   },
-  pathPrefix: '/hopefullee.github.io',
+  pathPrefix: '',
   plugins: [
     '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     {
