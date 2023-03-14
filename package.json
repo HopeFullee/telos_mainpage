@@ -35,6 +35,8 @@
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-transformer-remark": "^6.6.0",
     "gatsby-transformer-sharp": "^5.3.1",
+    "gh-pages": "^5.0.0",
+    "i": "^0.3.7",
     "prismjs": "^1.29.0",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
@@ -68,7 +70,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
   },
   "repository": {
     "type": "git",

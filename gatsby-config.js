@@ -13,7 +13,7 @@ module.exports = {
     author: `@Telos`,
     siteUrl: `http://localhost:8000`,
   },
-  pathPrefix: '/test-telos-web',
+  // pathPrefix: '/test-telos-web',
   plugins: [
     '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     {
