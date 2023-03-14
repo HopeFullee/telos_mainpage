@@ -6,7 +6,7 @@ const TelosInfo = () => {
 
     script.async = true
     script.src =
-      'https://dapi.kakao.com/v2/maps/sdk.js?appkey=c8b27f3cd9a7d196c595d7fd0e5b1d35&autoload=false'
+      'https://dapi.kakao.com/v2/maps/sdk.js?appkey=07aa6482f4033f52d208dcf9b9cddb14&autoload=false'
 
     document.head.appendChild(script)
 
