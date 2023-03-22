@@ -5,7 +5,7 @@ import {
   SoftCategoryAtom,
   BrandingCategoryAtom,
   TelosCategoryAtom,
-} from '../../../store'
+} from '../../../store/storeClass'
 import { useRecoilValue } from 'recoil'
 import clsx from 'clsx'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './src/styles/global.scss'
 import './src/styles/markdown-content.scss'
 

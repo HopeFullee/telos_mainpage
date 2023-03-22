@@ -8,11 +8,11 @@ type MainNewsProps = {
 
 const MainNews = ({ mainNewsList }: MainNewsProps) => {
   return (
-    <section className="px-10 mx-auto mt-150 sm:mt-200 lg:mt-250 max-w-1450 sm:px-40 lg:px-50">
+    <section className="px-10 mx-auto mt-120 sm:mt-200 lg:mt-250 max-w-1450 sm:px-40 lg:px-50">
       <h4 className="font-bold text-center font-open-sans text-36 sm:text-46 lg:text-52">
         Telos News
       </h4>
-      <ul className="mt-20 border-t-2 all:truncate sm:mt-30 border-c-black-300 under:border-b-1 under:border-c-gray-300 under:flex under:justify-between under:px-10 under:py-20 under:sm:px-30 under:lg:px-50 under:sm:py-25 under:lg:py-35 under:items-center">
+      <ul className="mt-20 border-t-2 all:truncate sm:mt-30 border-c-black-300 under:border-b-1 under:border-c-gray-300 under:flex under:justify-between under:px-10 under:py-30 under:sm:px-30 under:lg:px-50 under:sm:py-35 under:lg:py-45 under:items-center">
         {mainNewsList.map(
           ({
             node: {

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { CloseIcon, DesignIcon } from 'components/shared/Icons'
 import './index.scss'
-import { CategoryItems, modalStateAtom } from '../../../../../store'
+import { CategoryItems, modalStateAtom } from '../../../../../store/storeClass'
 import { useRecoilState } from 'recoil'
 import ATypeLayout from './ATypeLayout'
 import BTypeLayout from './BTypeLayout'
 import CTypeLayout from './CTypeLayout'
-import { layoutTypes } from '../../../../../store'
+import { layoutTypes } from '../../../../../store/storeClass'
 import clsx from 'clsx'
 import ClassIcon from './ClassIcon'
 
@@ -84,9 +84,12 @@ const ClassDetailModal = ({
               {description}
             </p>
           ) : (
-            description.map(elem => {
+            description.map((elem, idx) => {
               return (
-                <p className="font-medium leading-relaxed text-18 text-c-black-300 ">
+                <p
+                  key={idx}
+                  className="font-medium leading-relaxed text-18 text-c-black-300 "
+                >
                   {elem}
                 </p>
               )

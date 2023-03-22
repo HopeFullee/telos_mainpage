@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { TelosLogo, HamburgerIcon } from 'components/shared/Icons'
 import { Link } from 'gatsby'
 import Navbar from './Navbar'
@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import './index.scss'
 import { useRecoilValue } from 'recoil'
 import headerStateAtom from './store'
-import { modalStateAtom } from 'store'
 
 type Props = {
   currentPath: LocationContext
@@ -41,7 +40,7 @@ const Header = ({ currentPath }: Props) => {
           ? 'header-off'
           : 'header-on',
         isRootPath ? 'fixed' : 'sticky bg-white',
-        'header top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 sm:h-86 lg:px-50',
+        'top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 sm:h-86 lg:px-50',
       )}
     >
       <Link to="/">

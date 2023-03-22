@@ -19,7 +19,7 @@ const ATypeLayout = ({
           <span className="block w-full h-1 my-5 bg-black"></span>
           <ul className="font-medium list-disc ml-25 text-17">
             {dutyList.map((item, idx) => {
-              return <li key={idx}>{item}</li>
+              return <li key={`dutyList ${idx}`}>{item}</li>
             })}
           </ul>
         </div>
@@ -30,7 +30,7 @@ const ATypeLayout = ({
           <span className="block w-full h-1 my-5 bg-black"></span>
           <ul className="font-medium list-disc ml-25 text-17">
             {requirementList.map((item, idx) => {
-              return <li key={idx}>{item}</li>
+              return <li key={`requirementList ${idx}`}>{item}</li>
             })}
           </ul>
         </div>
@@ -39,7 +39,7 @@ const ATypeLayout = ({
           <span className="block w-full h-1 my-5 bg-black"></span>
           <ul className="font-medium list-disc ml-25 text-17">
             {preferList.map((item, idx) => {
-              return <li key={idx}>{item}</li>
+              return <li key={`preferList ${idx}`}>{item}</li>
             })}
           </ul>
         </div>

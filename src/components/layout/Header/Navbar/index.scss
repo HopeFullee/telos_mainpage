@@ -25,5 +25,5 @@
 }
 
 .overlay {
-  @apply fixed top-0 bottom-0 left-0 right-0 bg-c-black-300/50;
+  @apply fixed mx-auto w-full min-h-[100vh] top-0 bottom-0 left-0 right-0 bg-c-black-300/40;
 }

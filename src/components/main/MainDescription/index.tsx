@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { useMainGatsbyImage } from 'hooks/useMainGatsbyImage'
 import { useSetRecoilState } from 'recoil'
@@ -30,7 +30,7 @@ const MainDescription = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center justify-center header-anchor px-30 sm:px-40 gap-30 sm:gap-50 lg:gap-70 pt-80 sm:pt-100 lg:pt-140 lg:px-50 all:break-keep"
+      className="flex flex-col items-center justify-center pt-60 header-anchor px-30 sm:px-40 gap-30 sm:gap-50 lg:gap-70 sm:pt-100 lg:pt-140 lg:px-50 all:break-keep"
     >
       <div className="text-center text-c-black-300">
         <h3 className="font-bold leading-tight sm:leading-normal font-open-sans text-36 sm:text-46 lg:text-52">

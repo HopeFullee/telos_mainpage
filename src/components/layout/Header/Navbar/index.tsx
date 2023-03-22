@@ -56,9 +56,13 @@ const Navbar = ({ onClose, open }: NavbarProps) => {
           ))}
         </div>
         <div className="flex items-center gap-10 mt-auto text-white mb-75 sm:mb-50 pl-75 all:font-open-sans">
-          <a href="https://www.instagram.com/telos_official/">Instagram</a>
+          <a href="https://www.instagram.com/telos_official/" target="_blank">
+            Instagram
+          </a>
           <span className="w-1 h-16 bg-white"></span>
-          <a href="https://blog.naver.com/telos_official">Blog</a>
+          <a href="https://blog.naver.com/telos_official" target="_blank">
+            Blog
+          </a>
         </div>
       </nav>
     </>

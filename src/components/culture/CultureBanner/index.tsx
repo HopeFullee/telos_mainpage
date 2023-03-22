@@ -61,7 +61,7 @@ const CultureBanner = () => {
           loopedSlides={2}
           slidesPerView={2}
           loop={true}
-          speed={3000}
+          speed={5000}
           autoplay={{ delay: 0, waitForTransition: true }}
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import { ArrowRight } from 'components/shared/Icons'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import SEO from 'components/shared/SEO'
+import { useRecoilValue } from 'recoil'
+import { isPrevPageNewsStateAtom } from '../store/storeNewsPage'
 
 type PostTemplateProps = {
   data: {
@@ -36,6 +38,7 @@ const PostTemplate = function ({
   pageContext: { next },
 }: PostTemplateProps) {
   const { frontmatter, html } = markdown
+  const isPrevPageNews = useRecoilValue(isPrevPageNewsStateAtom)
 
   return (
     <Layout>
@@ -62,7 +65,12 @@ const PostTemplate = function ({
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
           <div className="flex items-center justify-between px-10 font-medium py-15 sm:px-20 sm:py-25 mt-50 border-y-2 border-c-gray-300 text-16 sm:text-21 lg:text-25 text-c-black-200 all:truncate">
-            <Link to="/news/">목록보기</Link>
+            {isPrevPageNews ? (
+              <button onClick={() => history.go(-1)}>목록보기</button>
+            ) : (
+              <Link to="/news/">목록보기</Link>
+            )}
+
             {next && (
               <Link
                 to={next.slug}

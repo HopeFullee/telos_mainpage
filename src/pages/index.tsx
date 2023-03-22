@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import MainBanner from 'components/main/MainBanner'
@@ -9,6 +9,8 @@ import MainBottomAnimate from 'components/main/MainBottomAnimate'
 import MainNews from 'components/main/MainNews'
 import MainContact from 'components/main/MainContact'
 import SEO from 'components/shared/SEO'
+import AOS from 'aos'
+import LocationPathChecker from 'components/shared/LocationPathChecker'
 
 type MainPageProps = {
   data: {
@@ -23,12 +25,21 @@ const IndexPage = function ({
     allMarkdownRemark: { edges },
   },
 }: MainPageProps) {
+  useEffect(() => {
+    AOS.init()
+
+    setTimeout(() => {
+      AOS.refresh()
+    }, 500)
+  }, [])
+
   return (
     <Layout>
       {/* 필요시 title description props 전달
       description은 옵셔널로 props로 넣지 않을 시 
       Raise your flag to tomorrow 로 고정됨 */}
-      <SEO title="HOME" description="메인 페이지" />
+      <SEO title="Creative Studio" description="메인 페이지" />
+      <LocationPathChecker />
       <MainBanner />
       <MainDescription />
       <MainCenterAnimate />
@@ -63,3 +74,6 @@ export const getPostList = graphql`
     }
   }
 `
+function useNavigate() {
+  throw new Error('Function not implemented.')
+}

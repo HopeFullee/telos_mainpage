@@ -3,12 +3,14 @@ import Layout from 'components/layout/Layout'
 import { useAboutGatsbyImages } from 'hooks/useAboutGatsbyImage'
 import BackgroundImage from 'gatsby-background-image'
 import { Link } from 'gatsby'
+import LocationPathChecker from 'components/shared/LocationPathChecker'
 
 const NotFound = () => {
   const { aboutBannerBg } = useAboutGatsbyImages()
 
   return (
     <Layout>
+      <LocationPathChecker />
       <section className="w-full h-[62vh] all:font-open-sans mb-[-120px]">
         <BackgroundImage
           Tag="section"

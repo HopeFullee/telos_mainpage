@@ -5,22 +5,22 @@ export const useMainGatsbyImage = () => {
     query mainPageImage {
       TelosSoft: file(name: { eq: "telos_soft" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(width: 780, quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       TelosSoftHover: file(name: { eq: "telos_soft_hover" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(width: 780, quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       TelosBranding: file(name: { eq: "telos_branding" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(width: 780, quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       TelosBrandingHover: file(name: { eq: "telos_branding_hover" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(width: 780, quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       TelosContact: file(name: { eq: "telos_contact" }) {

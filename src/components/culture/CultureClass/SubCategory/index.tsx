@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { DetailButton } from 'components/shared/Icons'
 import ClassDetailModal from './ClassDetailModal'
-import { modalStateAtom } from '../../../../store'
+import { modalStateAtom } from '../../../../store/storeClass'
 import { useRecoilState } from 'recoil'
-import { CategoryType } from '../../../../store'
-import { LocationContext } from '@reach/router'
+import { CategoryType } from '../../../../store/storeClass'
 
 type CategoryProps = {
   subCategory: CategoryType
@@ -33,13 +32,13 @@ const SubCategory = ({ subCategory }: CategoryProps) => {
             <li
               key={categoryEN}
               onClick={() => handleSubCategoryClick(idx)}
-              className="flex items-center justify-between cursor-pointer px-25 h-80 sm:h-120 lg:h-150 all:font-open-sans sm:px-45 lg:px-65 border-b-1"
+              className="flex items-center justify-between cursor-pointer px-25 h-80 sm:h-120 lg:h-150 sm:px-45 lg:px-65 border-b-1"
             >
               <div>
-                <p className="text-c-black-300 text-20 sm:text-30 lg:text-36">
+                <p className="text-c-black-300 text-20 sm:text-30 lg:text-36 font-open-sans">
                   {categoryEN}
                 </p>
-                <p className="text-c-gray-400 text-15 lg:text-18">
+                <p className="text-c-gray-400 text-14 lg:text-19">
                   {categoryKR}
                 </p>
               </div>
