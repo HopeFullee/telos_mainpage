@@ -15,7 +15,7 @@ const MainBanner = () => {
         <source src={bannerVideo} type="video/mp4" />
       </video>
 
-      <div className="absolute top-[32%] sm:top-[45%] drop-shadow-[0_0_20px_rgba(0,0,0,1)] w-full text-white z-10text-white px-30 sm:px-60 lg:px-90">
+      <div className="absolute top-[32%] sm:top-[45%] drop-shadow-[0_0_25px_rgba(0,0,0,0.8)] w-full text-white z-10text-white px-30 sm:px-60 lg:px-90">
         <h2 className="font-extrabold leading-tight open-sans text-30 ssm:text-40 sm:text-46 md:text-58">
           <span>Raise your flag </span>
           <span className="inline-block">to tomorrow</span>

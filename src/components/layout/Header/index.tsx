@@ -39,7 +39,7 @@ const Header = ({ currentPath }: Props) => {
           : isRootPath
           ? 'header-off'
           : 'header-on',
-        isRootPath ? 'fixed' : 'sticky bg-white',
+        isRootPath ? 'sticky lg:fixed' : 'sticky bg-white',
         'top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 sm:h-86 lg:px-50',
       )}
     >

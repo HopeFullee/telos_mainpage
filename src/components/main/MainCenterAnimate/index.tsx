@@ -73,7 +73,7 @@ const RowTwo = [
 
 const MainCenterAnimate = () => {
   const [animate, setAnimate] = useState<string>('')
-  const [speed, setSpeed] = useState<number>(3000)
+  const [speed, setSpeed] = useState<number>(4000)
 
   const handleSliderEnter = (staticImage: string) => {
     setAnimate(staticImage)
@@ -112,15 +112,15 @@ const MainCenterAnimate = () => {
               spaceBetween: 30,
             },
             1000: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             1300: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 30,
             },
             1600: {
-              slidesPerView: 6.5,
+              slidesPerView: 6.2,
               spaceBetween: 30,
             },
           }}
@@ -129,6 +129,7 @@ const MainCenterAnimate = () => {
             return (
               <SwiperSlide key={idx}>
                 <img
+                  className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
                   onMouseLeave={handleSliderLeave}
                   src={animate === staticImage ? gifImage : staticImage}
@@ -141,6 +142,7 @@ const MainCenterAnimate = () => {
             return (
               <SwiperSlide key={idx}>
                 <img
+                  className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
                   onMouseLeave={handleSliderLeave}
                   src={animate === staticImage ? gifImage : staticImage}
@@ -151,7 +153,7 @@ const MainCenterAnimate = () => {
           })}
         </Swiper>
         <Swiper
-          className="mt-15 sm:mt-30"
+          className="mt-15 sm:mt-40"
           allowTouchMove={false}
           loop={true}
           speed={speed}
@@ -168,15 +170,15 @@ const MainCenterAnimate = () => {
               spaceBetween: 30,
             },
             1000: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             1300: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 30,
             },
             1600: {
-              slidesPerView: 6.5,
+              slidesPerView: 6.2,
               spaceBetween: 30,
             },
           }}
@@ -185,6 +187,7 @@ const MainCenterAnimate = () => {
             return (
               <SwiperSlide key={idx}>
                 <img
+                  className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
                   onMouseLeave={handleSliderLeave}
                   src={animate === staticImage ? gifImage : staticImage}
@@ -197,6 +200,7 @@ const MainCenterAnimate = () => {
             return (
               <SwiperSlide key={idx} className="">
                 <img
+                  className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
                   onMouseLeave={handleSliderLeave}
                   src={animate === staticImage ? gifImage : staticImage}
