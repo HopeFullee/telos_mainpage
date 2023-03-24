@@ -5,7 +5,7 @@ export const useNewsGatsbyImage = () => {
     query newsPageImage {
       NewsBanner: file(name: { eq: "news_banner" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
