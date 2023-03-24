@@ -19,23 +19,7 @@ module.exports = {
   },
   plugins: [
     '@mediacurrent/gatsby-plugin-silence-css-order-warning',
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: './src/assets/favicon/telos_favicon.svg',
-        appName: 'My Website',
-        background: '#fff',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          yandex: false,
-          windows: false,
-        },
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
