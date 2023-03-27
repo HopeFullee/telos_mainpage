@@ -8,7 +8,7 @@ module.exports = {
    * 위의 플러그인을 설치 및 변환 주소를 복사하여 카카오톡 등에 공유해본다
    */
   siteMetadata: {
-    title: `Telos`,
+    title: `TELOS`,
     description: `Raise your flag to tomorrow`,
     author: `@Telos`,
     siteUrl: `https://hopefullee.github.io/`,
@@ -19,7 +19,12 @@ module.exports = {
   },
   plugins: [
     '@mediacurrent/gatsby-plugin-silence-css-order-warning',
-
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/assets/favicon/telos_favicon.svg',
+      },
+    },
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
