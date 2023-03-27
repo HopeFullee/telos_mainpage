@@ -10,6 +10,7 @@ const NotFound = () => {
 
   return (
     <Layout>
+      <PathChecker />
       <section className="w-full h-[62vh] all:font-open-sans mb-[-80px] sm:mb-[-120px]">
         <BackgroundImage
           Tag="section"
