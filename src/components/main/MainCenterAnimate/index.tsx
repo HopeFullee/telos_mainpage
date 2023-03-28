@@ -77,10 +77,12 @@ const MainCenterAnimate = () => {
 
   const handleSliderEnter = (staticImage: string) => {
     setAnimate(staticImage)
+    console.log('A')
   }
 
   const handleSliderLeave = () => {
     setAnimate('')
+    console.log('B')
   }
 
   SwiperCore.use([Autoplay])
