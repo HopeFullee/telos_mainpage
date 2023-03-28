@@ -4,13 +4,13 @@ import AboutBanner from 'components/about/AboutBanner'
 import AboutBranch from 'components/about/AboutBranch'
 import AboutPartners from 'components/about/AboutPartners'
 import SEO from 'components/shared/SEO'
-import LocationPathChecker from 'components/shared/LocationPathChecker'
+import PathChecker from 'components/shared/PathChecker'
 
 const AboutPage = () => {
   return (
     <Layout>
       <SEO title="ABOUT" description="기업 소개 페이지" />
-      <LocationPathChecker />
+      <PathChecker />
       <AboutBanner />
       <AboutBranch />
       <AboutPartners />

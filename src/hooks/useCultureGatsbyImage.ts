@@ -5,37 +5,37 @@ export const useCultureGatsbyImage = () => {
     query culturePageImage {
       CultureBanner01: file(name: { eq: "culture_banner_01" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner02: file(name: { eq: "culture_banner_02" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner03: file(name: { eq: "culture_banner_03" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner04: file(name: { eq: "culture_banner_04" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner05: file(name: { eq: "culture_banner_05" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner06: file(name: { eq: "culture_banner_06" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
       CultureBanner07: file(name: { eq: "culture_banner_07" }) {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(quality: 100, formats: [AUTO, WEBP, AVIF])
         }
       }
     }

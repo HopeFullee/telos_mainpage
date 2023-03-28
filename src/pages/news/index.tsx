@@ -7,7 +7,7 @@ import NewsList from 'components/news/NewsList'
 import { CategoryListProps } from 'components/news/NewsList/NewsCategory'
 import queryString from 'query-string'
 import SEO from 'components/shared/SEO'
-import LocationPathChecker from 'components/shared/LocationPathChecker'
+import PathChecker from 'components/shared/PathChecker'
 
 type NewsPageProps = {
   location: {
@@ -66,7 +66,7 @@ const NewsPage = function ({
   return (
     <Layout>
       <SEO title="NEWS" description="뉴스 페이지" />
-      <LocationPathChecker />
+      <PathChecker />
       <NewsBanner />
       <NewsDescription />
       <NewsList
@@ -108,3 +108,6 @@ export const getPostList = graphql`
     }
   }
 `
+function shouldUpdateScroll(arg0: boolean) {
+  throw new Error('Function not implemented.')
+}

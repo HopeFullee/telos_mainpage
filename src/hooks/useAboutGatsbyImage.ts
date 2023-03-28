@@ -5,7 +5,7 @@ export const useAboutGatsbyImages = () => {
     query aboutPageImage {
       AboutBannerBg: file(name: { eq: "about_banner" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 4160) {
+          fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }

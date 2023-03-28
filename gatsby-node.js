@@ -22,6 +22,7 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, actions }) => {
         hooks: path.resolve(__dirname, 'src/hooks'),
         assets: path.resolve(__dirname, 'src/assets'),
         icons: path.resolve(__dirname, 'src/assets/icons'),
+        store: path.resolve(__dirname, 'src/store'),
       },
     },
   })
