@@ -1,12 +1,4 @@
 module.exports = {
-  /**
-   * TODO 이곳에서 siteMetadata를 설정
-   * siteUrl은 추후에 배포예정인 주소로 변경
-   * 현재는 테스트를 위해 ip주소로 설정
-   * 테스트시 yarn start로 로컬 서버를 실행후
-   * https://chrome.google.com/webstore/detail/localhost-open-graph-chec/gcbnmkhkglonipggglncobhklaegphgn?hl=ko
-   * 위의 플러그인을 설치 및 변환 주소를 복사하여 카카오톡 등에 공유해본다
-   */
   siteMetadata: {
     title: `TELOS`,
     description: `Raise your flag to tomorrow`,

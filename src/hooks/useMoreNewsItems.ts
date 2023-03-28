@@ -1,4 +1,6 @@
 import { MutableRefObject, useRef, useEffect, useState, useMemo } from 'react'
+import { newsItemCountStateAtom } from 'store/storeNewsItemCount'
+import { useRecoilState } from 'recoil'
 
 export type useInfiniteScrollType = {
   containerRef: MutableRefObject<HTMLDivElement | null>
@@ -15,7 +17,8 @@ const useMoreNewsItems = function (
 ) {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
-  const [count, setCount] = useState<number>(1)
+  // const [count, setCount] = useState<number>(1)
+  const [count, setCount] = useRecoilState(newsItemCountStateAtom)
 
   const postListByCategory = useMemo(
     () =>
@@ -31,7 +34,9 @@ const useMoreNewsItems = function (
     [selectedCategory],
   )
 
-  useEffect(() => setCount(1), [selectedCategory])
+  useEffect(() => {
+    setCount(count)
+  }, [selectedCategory])
 
   const more = () => {
     setCount(prev => prev + 1)
@@ -43,11 +48,8 @@ const useMoreNewsItems = function (
     more,
     get isEnd() {
       return (
-        posts.length <=
-          postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE)
-            .length ||
-        postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE).length <
-          NUMBER_OF_ITEMS_PER_PAGE
+        postListByCategory.length <=
+        postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE).length
       )
     },
   }
