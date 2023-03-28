@@ -1,7 +1,7 @@
 import React from 'react'
 import NewsCategory, { CategoryListProps } from './NewsCategory'
 import NewsItem from './NewsItem'
-import useMoreNewsItems, { useInfiniteScrollType } from 'hooks/useMoreNewsItems'
+import useMoreNewsItems from 'hooks/useMoreNewsItems'
 import { MoreButton } from 'components/shared/Icons'
 
 type PostListProps = {
@@ -15,14 +15,20 @@ const NewsList = function ({
   ...rest
 }: PostListProps) {
   // 아이템 더보기
-  const { containerRef, postList, more, isEnd }: useInfiniteScrollType =
-    useMoreNewsItems(selectedCategory, posts)
+  const { containerRef, postList, more, resetCount, isEnd } = useMoreNewsItems(
+    selectedCategory,
+    posts,
+  )
   return (
     <section
       className="mx-auto mt-40 md:mt-60 px-30 sm:px-50 max-w-1600"
       ref={containerRef}
     >
-      <NewsCategory selectedCategory={selectedCategory} {...rest} />
+      <NewsCategory
+        selectedCategory={selectedCategory}
+        {...rest}
+        resetCount={resetCount}
+      />
       <div className="grid mt-45 sm:grid-cols-2 lg:grid-cols-3 sm:mt-60 md:mt-70 lg:mt-80 gap-30 sm:gap-45">
         {postList.map(
           ({

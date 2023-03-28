@@ -1,25 +1,23 @@
 import React from 'react'
 import CategoryButton from './CategoryButton'
-import { useSetRecoilState } from 'recoil'
-import { newsItemCountStateAtom } from 'store/storeNewsItemCount'
 
 export type CategoryListProps = {
   selectedCategory: string
   categoryList: Record<string, number>
   itemClickCallback: Function
+  resetCount: Function
 }
 
 const NewsCategory = ({
   selectedCategory,
   categoryList,
   itemClickCallback,
+  resetCount,
 }: CategoryListProps) => {
-  const setNewsItemCount = useSetRecoilState(newsItemCountStateAtom)
-
   const handleCategoryItemClick = (name: string) => {
     history.pushState(null, '', `?category=${name}`)
     itemClickCallback(name)
-    setNewsItemCount(1)
+    resetCount()
   }
 
   return (

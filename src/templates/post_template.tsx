@@ -47,8 +47,7 @@ const PostTemplate = function ({
   )
 
   useEffect(() => {
-    setCountNextNews(prev => ++prev)
-    console.log(countNextNews)
+    setCountNextNews(prev => prev + 1)
   }, [])
 
   return (
