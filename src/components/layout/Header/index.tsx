@@ -43,18 +43,18 @@ const Header = ({ currentPath }: Props) => {
         'top-0 z-20 flex items-center justify-between w-full h-60 px-15 sm:px-30 sm:h-86 lg:px-50',
       )}
     >
-      <Link to="/">
-        <TelosLogo className="w-full h-36 sm:h-46" />
+      <Link to="/" aria-label="TELOS">
+        <TelosLogo className="w-full h-36 sm:h-46" alt="Telos logo" />
       </Link>
 
-      <button onClick={handleMenuOpen}>
-        <HamburgerIcon
-          className={clsx(
-            getHamburgerIconStroke(),
-            'mr-[-5px] sm:mr-[-15px] h-full w-38 sm:w-45',
-          )}
-        />
-      </button>
+      <HamburgerIcon
+        onClick={handleMenuOpen}
+        className={clsx(
+          getHamburgerIconStroke(),
+          'mr-[-5px] sm:mr-[-15px] h-full w-38 sm:w-45 cursor-pointer',
+        )}
+      />
+
       <Navbar open={toggleMenu} onClose={handleMenuClose} />
     </header>
   )

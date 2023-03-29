@@ -10,6 +10,7 @@ module.exports = {
     DEV_SSR: true,
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     '@mediacurrent/gatsby-plugin-silence-css-order-warning',
     {
       resolve: 'gatsby-plugin-manifest',

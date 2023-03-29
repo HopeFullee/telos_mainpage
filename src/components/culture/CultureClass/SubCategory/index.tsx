@@ -11,18 +11,14 @@ type CategoryProps = {
 
 const SubCategory = ({ subCategory }: CategoryProps) => {
   const [modalState, setModalState] = useRecoilState(modalStateAtom)
-  const [categoryTarget, setCategoryTarget] = useState<number>(0)
+  const [classTarget, setClassTarget] = useState<number>(0)
 
+  // ClassDetailModal 모달 렌더 및 스크롤 중단
   const handleSubCategoryClick = (idx: number) => {
-    setCategoryTarget(idx)
+    setClassTarget(idx)
     setModalState(true)
-    // 모달이 켜져 있는 상태에서만 마우스 스크롤 중지
-    if (modalState) document.body.classList.add('overflow-y-hidden')
+    document.body.classList.add('overflow-y-hidden')
   }
-
-  useEffect(() => {
-    console.log()
-  }, [])
 
   return (
     <>
@@ -46,7 +42,7 @@ const SubCategory = ({ subCategory }: CategoryProps) => {
             </li>
           )
         })}
-        {modalState && <ClassDetailModal {...subCategory[categoryTarget]} />}
+        {modalState && <ClassDetailModal {...subCategory[classTarget]} />}
       </ul>
     </>
   )

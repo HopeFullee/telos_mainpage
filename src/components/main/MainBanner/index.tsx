@@ -3,7 +3,6 @@ import { ArrowDown } from 'components/shared/Icons'
 import bannerVideo from 'assets/video/main_page_banner.mp4'
 
 const MainBanner = () => {
-  // className={`flex flex-col justify-center bg-[url('assets/images/main_banner.gif')] bg-cover bg-no-repeat w-full h-[100vh]`}
   return (
     <section className="relative w-full overflow-hidden">
       <video

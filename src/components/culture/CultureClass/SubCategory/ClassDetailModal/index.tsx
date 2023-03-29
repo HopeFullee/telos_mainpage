@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { CloseIcon, DesignIcon } from 'components/shared/Icons'
+import React, { useEffect, useState } from 'react'
+import { CloseIcon } from 'components/shared/Icons'
 import './index.scss'
 import { CategoryItems, modalStateAtom } from '../../../../../store/storeClass'
-import { useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import ATypeLayout from './ATypeLayout'
 import BTypeLayout from './BTypeLayout'
 import CTypeLayout from './CTypeLayout'
@@ -19,9 +19,10 @@ const ClassDetailModal = ({
   requirementList,
   preferList,
 }: CategoryItems) => {
-  const [modalState, setModalState] = useRecoilState(modalStateAtom)
+  const setModalState = useSetRecoilState(modalStateAtom)
   const [isModalOverFlow, setIsModalOverFlow] = useState(false)
 
+  // ClassDetailModal 모달 렌더 해제 및 스크롤 복구
   const handleModalClose = () => {
     setModalState(false)
     document.body.classList.remove('overflow-y-hidden')
@@ -48,7 +49,7 @@ const ClassDetailModal = ({
   useWindowResize(modalRef)
 
   return (
-    <div className="fixed top-0 bottom-0 left-0 right-0 z-20 flex items-center justify-center w-full h-full overflow-y-auto bg-c-black-300/50">
+    <div className="fixed top-0 bottom-0 left-0 right-0 z-20 flex items-center justify-center w-full h-full mx-auto overflow-y-auto bg-c-black-300/50">
       <div onClick={handleModalClose} className="overlay"></div>
       <section
         ref={modalRef}

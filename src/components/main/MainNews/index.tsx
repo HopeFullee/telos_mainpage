@@ -21,8 +21,12 @@ const MainNews = ({ mainNewsList }: MainNewsProps) => {
             },
           }) => {
             return (
-              <Link key={title} to={slug}>
-                <li className="flex items-center justify-between w-full">
+              <li key={slug}>
+                <Link
+                  key={title}
+                  to={slug}
+                  className="flex items-center justify-between w-full"
+                >
                   <div className="max-w-[90%]">
                     <p className="text-16 sm:text-18 lg:text-22 text-c-gray-400">
                       {date}
@@ -32,8 +36,8 @@ const MainNews = ({ mainNewsList }: MainNewsProps) => {
                     </p>
                   </div>
                   <DetailButton className="w-15 h-15 sm:h-20 sm:w-20 lg:h-25 lg:w-25" />
-                </li>
-              </Link>
+                </Link>
+              </li>
             )
           },
         )}
