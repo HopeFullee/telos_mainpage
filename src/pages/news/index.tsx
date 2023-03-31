@@ -7,7 +7,6 @@ import NewsList from 'components/news/NewsList'
 import { CategoryListProps } from 'components/news/NewsList/NewsCategory'
 import queryString from 'query-string'
 import SEO from 'components/shared/SEO'
-import PathChecker from 'components/shared/PathChecker'
 
 type NewsPageProps = {
   location: {
@@ -21,7 +20,7 @@ type NewsPageProps = {
   }
 }
 const NewsPage = function ({
-  location: { search, path },
+  location: { search },
   data: {
     allMarkdownRemark: { edges },
   },
@@ -66,7 +65,6 @@ const NewsPage = function ({
   return (
     <Layout>
       <SEO title="NEWS" description="뉴스 페이지" />
-      <PathChecker />
       <NewsBanner />
       <NewsDescription />
       <NewsList

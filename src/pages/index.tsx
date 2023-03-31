@@ -10,7 +10,6 @@ import MainNews from 'components/main/MainNews'
 import MainContact from 'components/main/MainContact'
 import SEO from 'components/shared/SEO'
 import AOS from 'aos'
-import PathChecker from 'components/shared/PathChecker'
 
 type MainPageProps = {
   data: {
@@ -39,7 +38,6 @@ const IndexPage = function ({
       description은 옵셔널로 props로 넣지 않을 시 
       Raise your flag to tomorrow 로 고정됨 */}
       <SEO title="Creative Studio" description="메인 페이지" />
-      <PathChecker />
       <MainBanner />
       <MainDescription />
       <MainCenterAnimate />

@@ -4,9 +4,6 @@ import Layout from 'components/layout/Layout'
 import { ArrowRight } from 'components/shared/Icons'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import SEO from 'components/shared/SEO'
-import { useRecoilValue, useRecoilState } from 'recoil'
-import { isPrevPageNewsStateAtom } from 'store/storePrevPage'
-import { countNextNewsStateAtom } from 'store/storePrevPage'
 
 type PostTemplateProps = {
   data: {
@@ -41,15 +38,6 @@ const PostTemplate = function ({
 }: PostTemplateProps) {
   const { frontmatter, html } = markdown
 
-  const isPrevPageNews = useRecoilValue(isPrevPageNewsStateAtom)
-  const [countNextNews, setCountNextNews] = useRecoilState(
-    countNextNewsStateAtom,
-  )
-
-  useEffect(() => {
-    setCountNextNews(prev => prev + 1)
-  }, [])
-
   return (
     <Layout>
       <SEO title={frontmatter.title} description={markdown.excerpt} />
@@ -79,13 +67,8 @@ const PostTemplate = function ({
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
           <div className="flex items-center justify-between px-10 font-medium py-15 sm:px-20 sm:py-25 mt-30 sm:mt-50 border-y-2 border-c-gray-300 text-16 sm:text-21 lg:text-25 text-c-black-200 all:truncate">
-            {isPrevPageNews ? (
-              <button onClick={() => history.go(-countNextNews)}>
-                목록보기
-              </button>
-            ) : (
-              <Link to="/news/">목록보기</Link>
-            )}
+            <Link to="/news/">목록보기</Link>
+
             {next && (
               <Link
                 to={next.slug}
