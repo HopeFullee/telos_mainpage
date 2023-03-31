@@ -26,6 +26,13 @@ const Layout = function ({ children }: Props) {
       updatePosition()
       return () => window.removeEventListener('scroll', updatePosition)
     }
+
+    if (
+      window.location.pathname ===
+      ('/' || '/about' || '/culture/' || '/contact/')
+    ) {
+      setScrollPosition(0)
+    }
   }, [])
 
   return (

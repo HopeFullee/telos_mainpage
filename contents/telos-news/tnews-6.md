@@ -1,9 +1,9 @@
 ---
 date: '2023-03-10'
-title: 'TELOS 홈페이지가 달라졌어요!'
+title: 'TEST 합니다'
 categories: ['Telos news']
 summary: '텔로스 성공 신화'
-thumbnail: './assets/firework.png'
+thumbnail: '../default-assets/news_default.png'
 templateBg: true
 ---
 

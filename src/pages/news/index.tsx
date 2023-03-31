@@ -5,6 +5,8 @@ import NewsBanner from 'components/news/NewsBanner'
 import NewsDescription from 'components/news/NewsDescription'
 import NewsList from 'components/news/NewsList'
 import { CategoryListProps } from 'components/news/NewsList/NewsCategory'
+import { useRecoilState } from 'recoil'
+import { currentCategoryStateAtom } from 'store/storeCurrentCategory'
 import queryString from 'query-string'
 import SEO from 'components/shared/SEO'
 
@@ -25,7 +27,9 @@ const NewsPage = function ({
     allMarkdownRemark: { edges },
   },
 }: NewsPageProps) {
-  const [currentCategory, setCurrentCategory] = useState('All')
+  const [currentCategory, setCurrentCategory] = useRecoilState(
+    currentCategoryStateAtom,
+  )
 
   //1. 쿼리스트링을 가져온다 객체형식
   const parsed = queryString.parse(search)

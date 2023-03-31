@@ -1,7 +1,7 @@
 ---
 date: '2023-03-10'
-title: 'TEST 합니다'
-categories: ['Telos test']
+title: 'TEST 합니다 1'
+categories: ['Telos daily']
 summary: '텔로스 성공 신화'
 thumbnail: '../default-assets/news_default.png'
 templateBg: true

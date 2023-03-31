@@ -30,7 +30,7 @@ const NewsList = function ({
         resetCount={resetCount}
       />
       <div className="grid mt-45 sm:grid-cols-2 lg:grid-cols-3 sm:mt-60 md:mt-70 lg:mt-80 gap-30 sm:gap-45">
-        {postList.map(
+        {postList?.map(
           ({
             node: {
               id,

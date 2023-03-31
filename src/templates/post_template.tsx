@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import { ArrowRight } from 'components/shared/Icons'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { useRecoilValue } from 'recoil'
+import { currentCategoryStateAtom } from 'store/storeCurrentCategory'
 import SEO from 'components/shared/SEO'
 
 type PostTemplateProps = {
@@ -38,6 +40,8 @@ const PostTemplate = function ({
 }: PostTemplateProps) {
   const { frontmatter, html } = markdown
 
+  const categoryQueryString = useRecoilValue(currentCategoryStateAtom)
+
   return (
     <Layout>
       <SEO title={frontmatter.title} description={markdown.excerpt} />
@@ -67,7 +71,7 @@ const PostTemplate = function ({
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
           <div className="flex items-center justify-between px-10 font-medium py-15 sm:px-20 sm:py-25 mt-30 sm:mt-50 border-y-2 border-c-gray-300 text-16 sm:text-21 lg:text-25 text-c-black-200 all:truncate">
-            <Link to="/news/">목록보기</Link>
+            <Link to={`/news/?category=${categoryQueryString}`}>목록보기</Link>
 
             {next && (
               <Link

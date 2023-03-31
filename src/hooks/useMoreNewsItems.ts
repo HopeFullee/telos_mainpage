@@ -1,11 +1,4 @@
-import {
-  MutableRefObject,
-  useRef,
-  useEffect,
-  useState,
-  useMemo,
-  useCallback,
-} from 'react'
+import { useRef, useEffect, useMemo, useCallback } from 'react'
 import { newsItemCountStateAtom } from 'store/storeNewsItemCount'
 import { useRecoilState } from 'recoil'
 
@@ -19,8 +12,8 @@ import { useRecoilState } from 'recoil'
 const NUMBER_OF_ITEMS_PER_PAGE = 9
 
 const useMoreNewsItems = function (
-  selectedCategory: string,
-  posts: PostListItemType[],
+  selectedCategory: string | undefined,
+  posts: PostListItemType[] | undefined,
 ) {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -33,12 +26,13 @@ const useMoreNewsItems = function (
     () =>
       selectedCategory === 'All'
         ? posts
-        : posts.filter(
+        : posts?.filter(
             ({
               node: {
                 frontmatter: { categories },
               },
-            }: PostListItemType) => categories.includes(selectedCategory),
+            }: PostListItemType) =>
+              categories.includes(selectedCategory as string),
           ),
     [selectedCategory],
   )
@@ -53,14 +47,16 @@ const useMoreNewsItems = function (
 
   return {
     containerRef,
-    postList: postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE),
+    postList: postListByCategory?.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE),
     more,
     resetCount,
     get isEnd() {
-      return (
-        postListByCategory.length <=
-        postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE).length
-      )
+      if (postListByCategory) {
+        return (
+          postListByCategory.length <=
+          postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE).length
+        )
+      }
     },
   }
 }
