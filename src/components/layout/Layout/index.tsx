@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../Footer'
 import Header from '../Header'
 import { Location } from '@reach/router'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { newsItemCountStateAtom } from 'store/storeNewsItemCount'
 import { scrollPositionStateAtom } from 'store/storeScrollPosition'
 
 type Props = {
@@ -10,9 +11,13 @@ type Props = {
 }
 
 const Layout = function ({ children }: Props) {
+  // Recoil 전역 변수로 뉴스 페이지의 스크롤 좌표값을 저장 / 초기화 합니다.
   const [scrollPosition, setScrollPosition] = useRecoilState(
     scrollPositionStateAtom,
   )
+
+  // Recoil 전역 변수로 뉴스 더보기 초기화
+  const setNewsItemCountState = useSetRecoilState(newsItemCountStateAtom)
 
   useEffect(() => {
     if (window.location.pathname === '/news/') {
@@ -32,6 +37,7 @@ const Layout = function ({ children }: Props) {
       ('/' || '/about' || '/culture/' || '/contact/')
     ) {
       setScrollPosition(0)
+      setNewsItemCountState(1)
     }
   }, [])
 

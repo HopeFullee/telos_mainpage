@@ -14,23 +14,14 @@ const NewsList = function ({
   selectedCategory,
   ...rest
 }: PostListProps) {
-  // 아이템 더보기
-  const { containerRef, postList, more, resetCount, isEnd } = useMoreNewsItems(
-    selectedCategory,
-    posts,
-  )
+  // 뉴스 아이템 더보기 커스텀 훅
+  const { postList, more, isEnd } = useMoreNewsItems(selectedCategory, posts)
+
   return (
-    <section
-      className="mx-auto mt-40 md:mt-60 px-30 sm:px-50 max-w-1600"
-      ref={containerRef}
-    >
-      <NewsCategory
-        selectedCategory={selectedCategory}
-        {...rest}
-        resetCount={resetCount}
-      />
+    <section className="mx-auto mt-40 md:mt-60 px-30 sm:px-50 max-w-1600">
+      <NewsCategory selectedCategory={selectedCategory} {...rest} />
       <div className="grid mt-45 sm:grid-cols-2 lg:grid-cols-3 sm:mt-60 md:mt-70 lg:mt-80 gap-30 sm:gap-45">
-        {postList?.map(
+        {postList.map(
           ({
             node: {
               id,

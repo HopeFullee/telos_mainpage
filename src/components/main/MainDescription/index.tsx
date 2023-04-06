@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { useMainGatsbyImage } from 'hooks/useMainGatsbyImage'
 import { useSetRecoilState } from 'recoil'
-import headerStateAtom from 'components/layout/Header/store'
+import headerStateAtom from 'store/storeHeader'
 
 const MainDescription = () => {
   const { telosSoft, telosBranding, telosSoftHover, telosBrandingHover } =

@@ -6,7 +6,7 @@ import TelosInfo from 'components/contact/TelosInfo'
 const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="CONTACT" description="연락처 페이지" />
+      <SEO title="CONTACT" description="텔로스 연락쳐" />
       <TelosInfo />
     </Layout>
   )

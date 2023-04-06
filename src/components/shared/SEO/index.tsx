@@ -1,6 +1,7 @@
 import { useSiteMetadata } from 'hooks/useSiteMetadata'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import ogThumbnail from 'assets/favicon/telos_favicon.svg'
 
 type Props = {
   title: string
@@ -13,7 +14,9 @@ const SEO = ({ title, description }: Props) => {
   const defaultTitle = defaultMetadata.title
   const currentTitle = title ?? defaultTitle
   const ogTitle = title ? `${defaultTitle} | ${title}` : defaultTitle
-
+  /*
+   *  <head> 내 메타테그로 반환
+   */
   return (
     <Helmet
       htmlAttributes={{
@@ -39,6 +42,10 @@ const SEO = ({ title, description }: Props) => {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: ogThumbnail,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -48,7 +55,7 @@ const SEO = ({ title, description }: Props) => {
         },
         {
           name: `twitter:creator`,
-          content: ``,
+          content: defaultMetadata.author,
         },
         {
           name: `twitter:title`,
@@ -60,11 +67,11 @@ const SEO = ({ title, description }: Props) => {
         },
         {
           name: `google-site-verification`,
-          content: '',
+          content: '1OxcxblOx9c2rQCxlZhrIi9Nmpni55MepI3RC0VKl24',
         },
         {
           name: `naver-site-verification`,
-          content: '',
+          content: '9d93b502da5f2dda7557d571e1a1dca662b04436',
         },
       ]}
     />

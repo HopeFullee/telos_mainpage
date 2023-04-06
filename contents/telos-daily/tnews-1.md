@@ -1,6 +1,6 @@
 ---
-date: '2023-03-22'
-title: 'TELOS 일상 3 입니다.'
+date: '2023-03-20'
+title: 'TELOS 일상 1 입니다.'
 categories: ['Telos daily']
 summary: '텔로스 뉴스의 줄거리 내용입니다.'
 thumbnail: './assets/telos_office.png'

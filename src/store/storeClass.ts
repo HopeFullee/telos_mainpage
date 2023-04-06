@@ -1,12 +1,17 @@
 import { atom } from 'recoil'
+/*
+ *   culture 페이지 직군 소개의 리스트, 상세내용, 모달의
+ *   전역상태를 관리하는 파일 입니다.
+ */
 
-type ModalState = boolean
-
-export const modalStateAtom = atom<ModalState>({
+// culture 직군 소개 모달 ON / OFF 전역상태 Recoil 초기 세팅
+export const modalStateAtom = atom<Boolean>({
   key: 'ClassModalState',
   default: false,
 })
 
+// 하단 CategoryItems 에서 categoryEN의 커스텀 타입으로 지정
+// 추후 categoryEN 의 (A, B, C)타입과 맞는 레이아웃 컴포넌트 랜더
 export const layoutTypes = {
   'Strategic Planner': 'A',
   'Game Contents Planner': 'A',
@@ -20,6 +25,10 @@ export const layoutTypes = {
   'Management Supporter': 'C',
 } as const
 
+// 모든 직군 리스트의 타입
+// dutyList 내 주요업무의 리스트 묶음이 1개라면 singleList
+// 1개 이상이라면 multiList 에 작성.
+// 예) multiList 로 적용된 경원지원 직군 소개 모달 확인.
 export type CategoryItems = {
   rootCategory: string
   categoryEN: keyof typeof layoutTypes
@@ -52,6 +61,8 @@ export type CategoryItems = {
 
 export type CategoryType = CategoryItems[]
 
+// 텔로스 SOFT 직군별 정보
+// 추후 상세내용 추가/수정 필요시 현재 레이아웃 유지하에 작업
 export const SoftCategoryAtom = atom<CategoryType>({
   key: 'SoftCategoryInfo',
   default: [
@@ -300,6 +311,8 @@ export const SoftCategoryAtom = atom<CategoryType>({
   ],
 })
 
+// 텔로스 Branding 직군별 정보
+// 추후 상세내용 추가/수정 필요시 현재 레이아웃 유지하에 작업
 export const BrandingCategoryAtom = atom<CategoryType>({
   key: 'BrandingCategoryInfo',
   default: [
@@ -378,6 +391,8 @@ export const BrandingCategoryAtom = atom<CategoryType>({
   ],
 })
 
+// 텔로스 TELOS 직군별 정보
+// 추후 상세내용 추가/수정 필요시 현재 레이아웃 유지하에 작업
 export const TelosCategoryAtom = atom<CategoryType>({
   key: 'TelosCategoryInfo',
   default: [

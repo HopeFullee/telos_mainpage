@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
-
+/*
+ *  pages/About 페이지 베너 이미지 graphQL로 조회해서 반환
+ */
 export const useAboutGatsbyImages = () => {
   const imageData = useStaticQuery(graphql`
     query aboutPageImage {

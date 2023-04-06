@@ -91,6 +91,8 @@ const PostTemplate = function ({
 
 export default PostTemplate
 
+// gatsby-node.js 에서 뉴스 리스트에서 선택했던 아이템의 slug 정보를 포함 시켜 포스트 생성
+// 생성과정 포함된 slug에 해당하는 쿼리 데이터 호출
 export const queryMarkdownDataBySlug = graphql`
   query queryMarkdownDataBySlug($slug: String) {
     markdown: markdownRemark(fields: { slug: { eq: $slug } }) {

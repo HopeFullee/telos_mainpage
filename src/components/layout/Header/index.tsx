@@ -6,7 +6,7 @@ import { LocationContext } from '@reach/router'
 import clsx from 'clsx'
 import './index.scss'
 import { useRecoilValue } from 'recoil'
-import headerStateAtom from './store'
+import headerStateAtom from '../../../store/storeHeader'
 
 type Props = {
   currentPath: LocationContext
@@ -25,6 +25,7 @@ const Header = ({ currentPath }: Props) => {
     setToggleMenu(false)
   }
 
+  // 헤더 Recoil 상태에 따라 햄버거 매뉴 색 변경
   const getHamburgerIconStroke = () => {
     if (currentHeaderState === 'on') return 'stroke-[#C7C7C7]'
     if (isRootPath) return 'stroke-white'

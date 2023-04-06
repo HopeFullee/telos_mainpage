@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useMemo, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layout/Layout'
 import NewsBanner from 'components/news/NewsBanner'
@@ -27,6 +27,7 @@ const NewsPage = function ({
     allMarkdownRemark: { edges },
   },
 }: NewsPageProps) {
+  // 마지막으로 머물렀던 카테고리를 Recoil로 저장
   const [currentCategory, setCurrentCategory] = useRecoilState(
     currentCategoryStateAtom,
   )
@@ -82,7 +83,9 @@ const NewsPage = function ({
 }
 
 export default NewsPage
-
+/*
+ *  contents 내부 모든 마크다운 파일 정보 불러옴
+ */
 export const getPostList = graphql`
   query getPostList {
     allMarkdownRemark(

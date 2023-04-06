@@ -9,7 +9,7 @@ import SEO from 'components/shared/SEO'
 const CulturePage = () => {
   return (
     <Layout>
-      <SEO title="CULTURE" description="사내 문화 페이지" />
+      <SEO title="CULTURE" description="텔로스 사내 문화" />
       <CultureBanner />
       <CultureDescription />
       <CultureClass />

@@ -16,8 +16,8 @@ const NAVBAR_ITEMS = {
   Contact: '/contact',
 }
 
-/**
- * ./index.scss animation 확인
+/*
+ *  ./index.scss animation 확인
  */
 const ANIMATION_TERM = 300
 

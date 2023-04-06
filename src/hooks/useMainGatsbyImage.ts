@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
-
+/*
+ *  pages/index 페이지 description, contact 이미지 graphQL로 조회해서 반환
+ */
 export const useMainGatsbyImage = () => {
   const imageData = useStaticQuery(graphql`
     query mainPageImage {

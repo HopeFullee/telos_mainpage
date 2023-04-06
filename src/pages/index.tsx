@@ -24,6 +24,7 @@ const IndexPage = function ({
     allMarkdownRemark: { edges },
   },
 }: MainPageProps) {
+  // 메인 페이지 랜더 시 AOS 애니메이션 refresh 적용. (애니메이션 오류 방지)
   useEffect(() => {
     AOS.init()
 
@@ -35,9 +36,9 @@ const IndexPage = function ({
   return (
     <Layout>
       {/* 필요시 title description props 전달
-      description은 옵셔널로 props로 넣지 않을 시 
+      description은 옵셔널로 props로 넣지 않을 시
       Raise your flag to tomorrow 로 고정됨 */}
-      <SEO title="Creative Studio" description="메인 페이지" />
+      <SEO title="TELOS" description="We are creative Studio" />
       <MainBanner />
       <MainDescription />
       <MainCenterAnimate />
@@ -50,7 +51,9 @@ const IndexPage = function ({
 }
 
 export default IndexPage
-
+/*
+ *  메인 페이지 하단 /MainNews 에서 사용할 최신 뉴스 3개의 정보 불러옴
+ */
 export const getPostList = graphql`
   query getPostList {
     allMarkdownRemark(

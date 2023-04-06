@@ -16,14 +16,14 @@ const MainNews = ({ mainNewsList }: MainNewsProps) => {
         {mainNewsList.map(
           ({
             node: {
+              id,
               fields: { slug },
               frontmatter: { title, date },
             },
           }) => {
             return (
-              <li key={slug}>
+              <li key={id}>
                 <Link
-                  key={title}
                   to={slug}
                   className="flex items-center justify-between w-full"
                 >

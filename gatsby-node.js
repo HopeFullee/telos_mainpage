@@ -9,7 +9,7 @@
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// Setup Import Alias
+// src 내부 커스텀 경로 설정
 exports.onCreateWebpackConfig = ({ stage, getConfig, actions }) => {
   const output = getConfig().output || {}
 
@@ -28,7 +28,7 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, actions }) => {
   })
 }
 
-// Generate a Slug Each Post Data
+// contens 내부 마크다운 파일로 생성되는 포스트에 slug 생성
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
@@ -38,11 +38,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-// Generate Post Page Through Markdown Data
+// contens 내부 마크다운 파일로 포스트(templates) 생성
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  // Get All Markdown File For Paging
+  // 페이징을 위해 모든 마크다운 파일 호출
   const queryAllMarkdownData = await graphql(
     `
       {
@@ -79,13 +79,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  // Import Post Template Component
+  // template 컴포넌트 import
   const PostTemplateComponent = path.resolve(
     __dirname,
     'src/templates/post_template.tsx',
   )
 
-  // Page Generating Function
+  // template 페이지 생성 함수
   const generatePostPage = ({
     node: {
       fields: { slug },
@@ -110,6 +110,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage(pageOptions)
   }
 
-  // Generate Post Page And Passing Slug Props for Query
+  // slug 정보가 포함된 포스트 생성
   queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage)
 }

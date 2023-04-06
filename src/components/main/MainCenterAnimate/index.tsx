@@ -73,16 +73,14 @@ const RowTwo = [
 
 const MainCenterAnimate = () => {
   const [animate, setAnimate] = useState<string>('')
-  const [speed, setSpeed] = useState<number>(4000)
+  const SLIDER_SPEED = 4000
 
   const handleSliderEnter = (staticImage: string) => {
     setAnimate(staticImage)
-    console.log('A')
   }
 
   const handleSliderLeave = () => {
     setAnimate('')
-    console.log('B')
   }
 
   SwiperCore.use([Autoplay])
@@ -98,7 +96,7 @@ const MainCenterAnimate = () => {
         <Swiper
           allowTouchMove={false}
           loop={true}
-          speed={speed}
+          speed={SLIDER_SPEED}
           autoplay={{
             delay: 0,
           }}
@@ -129,7 +127,7 @@ const MainCenterAnimate = () => {
         >
           {RowOne.map(({ staticImage, gifImage, alter }, idx) => {
             return (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={`${alter} ${idx}`}>
                 <img
                   className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
@@ -142,7 +140,7 @@ const MainCenterAnimate = () => {
           })}
           {RowOne.map(({ staticImage, gifImage, alter }, idx) => {
             return (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={`${alter} ${idx}`}>
                 <img
                   className="min-w-auto lg:min-w-250"
                   onMouseEnter={() => handleSliderEnter(staticImage)}
@@ -158,7 +156,7 @@ const MainCenterAnimate = () => {
           className="mt-15 sm:mt-40"
           allowTouchMove={false}
           loop={true}
-          speed={speed}
+          speed={SLIDER_SPEED}
           autoplay={{ delay: 0, reverseDirection: true }}
           onAutoplayPause={swiper => swiper.autoplay.start()}
           onAutoplayStop={swiper => swiper.autoplay.start()}
