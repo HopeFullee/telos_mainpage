@@ -34,7 +34,7 @@ const Layout = function ({ children }: Props) {
 
     if (
       window.location.pathname ===
-      ('/' || '/about' || '/culture/' || '/contact/')
+      ('/' || '/about/' || '/culture/' || '/contact/')
     ) {
       setScrollPosition(0)
       setNewsItemCountState(1)

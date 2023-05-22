@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import mainPhoto01 from 'assets/images/main_photo_01.png'
 import mainPhoto02 from 'assets/images/main_photo_02.png'
 import mainPhoto03 from 'assets/images/main_photo_03.png'
-import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const MainPhotoZone = () => {

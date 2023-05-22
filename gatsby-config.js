@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `TELOS`,
-    description: `Raise your flag to tomorrow`,
+    title: `텔로스`,
+    description: `We are creative studio TELOS`,
     author: `@Telos`,
-    siteUrl: `https://hopefullee.github.io/`,
+    siteUrl: `https://www.thetelos.net/`,
   },
   pathPrefix: '',
   flags: {

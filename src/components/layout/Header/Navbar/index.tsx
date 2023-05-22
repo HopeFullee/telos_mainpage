@@ -48,14 +48,14 @@ const Navbar = ({ onClose, open }: NavbarProps) => {
         <button onClick={handleCloseClick} className="ml-auto text-white m-30 ">
           <CloseIcon className="w-50 h-50" />
         </button>
-        <div className="flex flex-col gap-20 font-bold text-white mt-50 all:pl-75 text-32 under:font-open-sans">
+        <div className="flex flex-col gap-20 font-bold text-white mt-50 all:pl-[15%] text-32 under:font-open-sans">
           {Object.entries(NAVBAR_ITEMS).map(([key, path]) => (
             <Link key={key} to={path} className="hover:text-[#F9EA7A]">
               {key}
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-10 mt-auto text-white mb-75 sm:mb-50 pl-75 all:font-open-sans">
+        <div className="flex items-center gap-10 mt-auto text-white mb-75 sm:mb-50 pl-[15%] all:font-open-sans">
           <a href="https://www.instagram.com/telos_official/" target="_blank">
             Instagram
           </a>

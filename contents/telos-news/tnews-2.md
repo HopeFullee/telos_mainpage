@@ -3,7 +3,7 @@ date: '2023-03-24'
 title: 'TELOS 뉴스 2 입니다.'
 categories: ['Telos news']
 summary: '텔로스 뉴스의 줄거리 내용입니다.'
-thumbnail: './assets/firework.png'
+thumbnail: '../default-assets/default_recruit_branding.png'
 templateBg: true
 ---
 

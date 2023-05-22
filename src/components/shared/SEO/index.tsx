@@ -1,7 +1,7 @@
 import { useSiteMetadata } from 'hooks/useSiteMetadata'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import ogThumbnail from 'assets/favicon/telos_favicon.svg'
+import ogThumbnail from 'assets/favicon/telos_og_image.png'
 
 type Props = {
   title: string
